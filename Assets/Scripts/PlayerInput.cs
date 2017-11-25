@@ -12,6 +12,8 @@ public class PlayerInput {
 	private string fireEmbiggen;
 	private string fireDebigulate;
 
+    private string pressButton;
+
 	private float aimAxisDeadzone = 0.5f;
 	private float jumpThreshold = 0.5f;
     private float fireThreshold = 0.5f;
@@ -224,6 +226,8 @@ public class PlayerInput {
 
 		fireEmbiggen = Button.Embiggen.ToString() + postfix;
 		fireDebigulate = Button.Debigulate.ToString() + postfix;
+
+        pressButton = Button.Press.ToString() + postfix;
 	}
 
 	private float GetAxis(string axis) {
@@ -259,7 +263,7 @@ public class PlayerInput {
 	public bool FireEmbiggen { get { return GetAxis(fireEmbiggen) > fireThreshold; } }
 	public bool FireDebigulate { get { return GetAxis(fireDebigulate) > fireThreshold; } }
 
-    public bool MenuPress { get { return false; } }
+    public bool MenuPress { get { return Input.GetButtonDown(pressButton); } }
 
     public bool MenuUp { get { return MoveY < 0; } }
     public bool MenuDown { get { return MoveY > 0; } }
