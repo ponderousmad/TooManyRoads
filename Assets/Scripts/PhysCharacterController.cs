@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PhysCharacterController : MonoBehaviour {
@@ -109,7 +108,7 @@ public class PhysCharacterController : MonoBehaviour {
 	void OnClinged()
 	{
 		isClinging = true;
-		jumpCount = 0;
+		jumpCount = 1;
 	}
 
 	void OnLanded()

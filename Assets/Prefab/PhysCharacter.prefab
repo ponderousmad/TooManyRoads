@@ -90,15 +90,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  airMovementSpeed: 5
-  fallingMoveDamping: 0.8
   jumpImpulse: 5
   slope: 45
   wallSlope: 15
   maxJumps: 2
   slideConstantGravity: -2
   wallJumpImpulse: {x: 5, y: 6}
-  wallJumpDisableXTime: 0.5
   debugVelocity: {x: 0, y: 0}
   debugIsClinging: 0
   debugContactNormal: {x: 0, y: 0}
