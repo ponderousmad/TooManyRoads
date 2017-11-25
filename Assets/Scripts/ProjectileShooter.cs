@@ -76,10 +76,16 @@ public class ProjectileShooter : MonoBehaviour {
 
 	private Vector2 GetPlayerAim()
 	{
-		Player p = GetComponent<Player> ();
-		if (p != null) {
-			return(p.GetAim (snapAim));
+		if (transform.parent != null) {
+			if (transform.parent.gameObject != null) {
+				Player p = transform.parent.gameObject.GetComponent<Player> ();
+				if (p != null) {
+					Debug.Log ("got aim from player");
+					return(p.GetAim (snapAim));
+				}
+			}
 		}
-		return new Vector2(0.0f, 0.0f);
+
+		return(new Vector2(0.0f, 0.0f));
 	}
 }
