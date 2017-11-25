@@ -14,13 +14,16 @@ public class PlayerInput {
 
 	private float aimAxisDeadzone = 0.5f;
 	private float jumpThreshold = 0.5f;
+    private float fireThreshold = 0.5f;
 
 	enum Axis
 	{
 		MoveX = 0,
 		MoveY = 1,
 		AimX = 2,
-		AimY = 3
+		AimY = 3,
+		Embiggen = 4,
+		Debigulate = 5
 	}
 
 	enum Button
@@ -29,9 +32,9 @@ public class PlayerInput {
 		Debigulate = 1
 	}
 
-	private static int[] WindowsAxisNumbers = { 0, 1, 2, 3 };
+	private static string[] WindowsAxisNames = { "x axis", "x axis", "4", "5", "9", "10" };
 	private static int[] WindowsButtonNumbers = { 0, 1 };
-	private static int[] OSXAxisNumbers = { 0, 1, 2, 3 };
+	private static string[] OSXAxisNames = { "x axis", "y axis", "3", "4", "5", "6" };
 	private static int[] OSXButtonNumbers = { 0, 1 };
 
 	private static string PlatformName(RuntimePlatform platform)
@@ -48,18 +51,18 @@ public class PlayerInput {
 		return "";
 	}
 
-	private static int[] PlatformAxis(RuntimePlatform platform)
+	private static string[] PlatformAxis(RuntimePlatform platform)
 	{
 		switch(platform)
 		{
 			case RuntimePlatform.OSXEditor:
 			case RuntimePlatform.OSXPlayer:
-				return OSXAxisNumbers;
+				return OSXAxisNames;
 			case RuntimePlatform.WindowsEditor:
 			case RuntimePlatform.WindowsPlayer:
-				return WindowsAxisNumbers;
+				return WindowsAxisNames;
 		}
-		return WindowsAxisNumbers;
+		return WindowsAxisNames;
 	}
 
 	private static int[] PlatformButton(RuntimePlatform platform)
@@ -84,7 +87,7 @@ public class PlayerInput {
 	static string AxisInput(Axis axis, int player, RuntimePlatform platform, string negativeKey, string positiveKey, string altNegative = "", string altPostive = "")
 	{
 		string axisName = axis.ToString() + Postfix(player, platform);
-		int axisNumber = PlatformAxis(platform)[(int)axis];
+		string axisValue = PlatformAxis(platform)[(int)axis];
 		return string.Format(@"
   - serializedVersion: 3
     m_Name: {0}
@@ -101,13 +104,13 @@ public class PlayerInput {
     invert: 0
     type: 2
     axis: {5}
-    joyNum: {6}", axisName, negativeKey, positiveKey, altNegative, altPostive, axisNumber, player);
+    joyNum: {6}", axisName, negativeKey, positiveKey, altNegative, altPostive, axisValue, player);
 	}
 
 	static string ButtonInput(Button button, int player, RuntimePlatform platform, string key)
 	{
 		string buttonName = button.ToString() + Postfix(player, platform);
-		int buttonNumber = PlatformAxis(platform)[(int)button];
+		int buttonNumber = PlatformButton(platform)[(int)button];
 		return string.Format(@"
   - serializedVersion: 3
     m_Name: {0}
@@ -134,8 +137,8 @@ public class PlayerInput {
 		yield return AxisInput(Axis.MoveY, player, platform, useKeys ? "w" : "", useKeys ? "s" : "", useKeys ? "space" : "");
 		yield return AxisInput(Axis.AimX, player, platform, useKeys ? "left" : "", useKeys ? "right" : "");
 		yield return AxisInput(Axis.AimY, player, platform, useKeys ? "down" : "", useKeys ? "up" : "");
-		yield return ButtonInput(Button.Embiggen, player, platform, useKeys ? "e" : "");
-		yield return ButtonInput(Button.Embiggen, player, platform, useKeys ? "q" : "");
+		yield return AxisInput(Axis.Embiggen, player, platform, useKeys ? "e" : "", "");
+		yield return AxisInput(Axis.Debigulate, player, platform, useKeys ? "q" : "", "");
 	}
 
 	public static string AllDefinitions()
@@ -192,6 +195,6 @@ public class PlayerInput {
 
 	public bool Jump { get { return MoveY > jumpThreshold; } }
 
-	public bool FireEmbiggen { get { return Input.GetButton(fireEmbiggen); } }
-	public bool FireDebigulate { get { return Input.GetButton(fireDebigulate); } }
+	public bool FireEmbiggen { get { return GetAxis(fireEmbiggen) > fireThreshold; } }
+	public bool FireDebigulate { get { return GetAxis(fireDebigulate) > fireThreshold; } }
 }

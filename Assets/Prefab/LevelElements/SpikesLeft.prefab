@@ -307,11 +307,9 @@ MonoBehaviour:
   minScale: {x: 0.25, y: 1, z: 1}
   maxScale: {x: 4, y: 1, z: 1}
   scaleRate: 1
-  initialScaleLerp: 0.5
+  initialScaleLerp: 0.26666665
   restoreRate: 0.1
   restoreDelay: 1
-  mCurrentScaleValue: 0
-  mTargetScaleValue: 0
 --- !u!114 &114087002447730410
 MonoBehaviour:
   m_ObjectHideFlags: 1
