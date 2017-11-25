@@ -7482,15 +7482,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4351555798855154, guid: 4ff9e9dcd4e6833479e6dd23a8069968, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.69
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4351555798855154, guid: 4ff9e9dcd4e6833479e6dd23a8069968, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.09
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4351555798855154, guid: 4ff9e9dcd4e6833479e6dd23a8069968, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.2260189
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4351555798855154, guid: 4ff9e9dcd4e6833479e6dd23a8069968, type: 2}
       propertyPath: m_LocalRotation.x
@@ -7527,6 +7527,11 @@ Prefab:
       propertyPath: wallJumpImpulse.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 23972979783794862, guid: 4ff9e9dcd4e6833479e6dd23a8069968,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d71a02cd42d165944b118b734b2581d1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ff9e9dcd4e6833479e6dd23a8069968, type: 2}
   m_IsPrefabParent: 0
