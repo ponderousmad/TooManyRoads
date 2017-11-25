@@ -5,10 +5,39 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	private PlayerInput mInput;
+    private int mPlayerID = 0;
+
+    [ContextMenu ("ExportInputDefintions")]
+    public void ExportInputDefinitions()
+    {
+		System.IO.File.WriteAllText(
+			@"/Users/agnomen/Documents/workspace/Inputs.txt",
+			PlayerInput.AllDefinitions()
+		);
+    }
+
+    public void SetID(int id)
+    {
+        Debug.Log("Setting player ID to: " + mPlayerID.ToString());
+        mPlayerID = id;
+        mInput = new PlayerInput(mPlayerID);
+
+        PhysCharacterController controller = GetComponent<PhysCharacterController>();
+        controller.SetPlayerInput(mInput);
+    }
 
 	// Use this for initialization
 	void Start () {
-		mInput = new PlayerInput (1);
+        if(mPlayerID == 0)
+        {
+            Debug.Log("Using default player ID.");
+            SetID(1);
+        }
+
+        foreach(var shooter in GetComponentsInChildren<ProjectileShooter>())
+        {
+            shooter.SetInput(mInput);
+        }
 	}
 	
 	// Update is called once per frame
@@ -23,8 +52,5 @@ public class Player : MonoBehaviour {
         }
 	}
 
-	public Vector2 GetAim(bool snap)
-	{
-		return(mInput.Aim(snap));
-	}
+	public PlayerInput Input { get { return mInput; } }
 }

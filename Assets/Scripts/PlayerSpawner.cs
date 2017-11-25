@@ -27,5 +27,7 @@ public class PlayerSpawner : MonoBehaviour {
 		GameObject player = Instantiate (playerPrefab, transform.position, Quaternion.identity);
 		//MeshRenderer playerRenderer = player.GetComponent<MeshRenderer> ();
 		//playerRenderer.material.color = settings.tint;
+
+        player.GetComponent<Player>().SetID(playerId);
 	}
 }

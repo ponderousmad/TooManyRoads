@@ -15,12 +15,18 @@ public class ProjectileShooter : MonoBehaviour {
 	private float mShootTimer;
 
 	private AmmoController mAmmoControl;
+    private PlayerInput mPlayerInput;
 
 	// Use this for initialization
 	void Start () {
 		mShootTimer = 0;
 		mAmmoControl = GetComponent<AmmoController> ();
 	}
+
+    public void SetInput(PlayerInput input)
+    {
+        mPlayerInput = input;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,12 +34,10 @@ public class ProjectileShooter : MonoBehaviour {
 			mShootTimer -= Time.deltaTime;
 		}
 
-		float fire1 = Input.GetAxis ("Fire1");
-		if (fire1 > 0 && CanShoot()) {
+		if (mPlayerInput.FireEmbiggen && CanShoot()) {
 			ShootProjectile (projectileType1);
 		}
-		float fire2 = Input.GetAxis ("Fire2");
-		if (fire2 > 0 && CanShoot()) {
+		if (mPlayerInput.FireDebigulate && CanShoot()) {
 			ShootProjectile (projectileType2);
 		}
 	}
@@ -46,7 +50,7 @@ public class ProjectileShooter : MonoBehaviour {
 			return;
 		}
 
-		Vector2 aim = GetPlayerAim ();
+		Vector2 aim = mPlayerInput.Aim(true);
 		Debug.Log ("aim: " + aim);
 		Vector3 offset = new Vector3 (aim.x, aim.y, 0); // TODO: data drive? consider player scale too
 
@@ -72,20 +76,5 @@ public class ProjectileShooter : MonoBehaviour {
 		}
 
 		return(true);
-	}
-
-	private Vector2 GetPlayerAim()
-	{
-		if (transform.parent != null) {
-			if (transform.parent.gameObject != null) {
-				Player p = transform.parent.gameObject.GetComponent<Player> ();
-				if (p != null) {
-					Debug.Log ("got aim from player");
-					return(p.GetAim (snapAim));
-				}
-			}
-		}
-
-		return(new Vector2(0.0f, 0.0f));
 	}
 }
