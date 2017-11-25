@@ -15,8 +15,8 @@ public class Embiggener : MonoBehaviour {
     //private float mMinScale = 0.0f;
     //public float maxScale = 1.0f;
 
-    private float mCurrentScaleValue;
-    private float mTargetScaleValue;
+    public float mCurrentScaleValue;
+    public float mTargetScaleValue;
     private float mScaleRate;
     private Vector3 mOriginalScale;
 
