@@ -529,6 +529,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114555847189861928, guid: 4ff9e9dcd4e6833479e6dd23a8069968,
+        type: 2}
+      propertyPath: wallJumpImpulse.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114555847189861928, guid: 4ff9e9dcd4e6833479e6dd23a8069968,
+        type: 2}
+      propertyPath: wallJumpImpulse.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114555847189861928, guid: 4ff9e9dcd4e6833479e6dd23a8069968,
+        type: 2}
+      propertyPath: slideConstantGravity
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50138557436176646, guid: 4ff9e9dcd4e6833479e6dd23a8069968,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 66a7064b24791f541b4f04ff4d445742, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ff9e9dcd4e6833479e6dd23a8069968, type: 2}
   m_IsPrefabParent: 0
