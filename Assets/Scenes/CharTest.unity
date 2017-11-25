@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 1842098959}
   m_Layer: 0
   m_Name: Mover
-  m_TagString: Untagged
+  m_TagString: Mover
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDirection: {x: 1, y: 0}
   moveSpeed: {x: 1, y: 0}
-  moveTime: 0
+  moveTime: 1
 --- !u!1 &1940228470
 GameObject:
   m_ObjectHideFlags: 0
