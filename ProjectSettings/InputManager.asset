@@ -302,13 +302,13 @@ InputManager:
     positiveButton: d
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
-    axis: x axis
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: MoveY_P1_WIN
@@ -316,15 +316,15 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: w
     positiveButton: s
-    altNegativeButton: space
-    altPositiveButton: 
-    gravity: 1000
+    altNegativeButton: 
+    altPositiveButton: space
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
-    axis: x axis
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: AimX_P1_WIN
@@ -334,13 +334,13 @@ InputManager:
     positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
-    axis: 4
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: AimY_P1_WIN
@@ -350,333 +350,621 @@ InputManager:
     positiveButton: up
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
-    axis: 5
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: Embiggen_P1_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: e
-    positiveButton: 
+    negativeButton: 
+    positiveButton: e
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
-    axis: 9
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: Debigulate_P1_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: q
-    positiveButton: 
+    negativeButton: 
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: MoveX_P1_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: MoveY_P1_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 1
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: AimX_P1_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: AimY_P1_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 4
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Embiggen_P1_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 8
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Debigulate_P1_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 9
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Embiggen_P1_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 7
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Debigulate_P1_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 6
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Press_P1_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 0
+    altNegativeButton:
+    altPositiveButton: space
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 10
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: MoveX_P2_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: x axis
+    axis: 0
     joyNum: 2
   - serializedVersion: 3
     m_Name: MoveY_P2_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: x axis
+    axis: 1
     joyNum: 2
   - serializedVersion: 3
     m_Name: AimX_P2_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: 4
+    axis: 3
     joyNum: 2
   - serializedVersion: 3
     m_Name: AimY_P2_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: 5
+    axis: 4
     joyNum: 2
   - serializedVersion: 3
     m_Name: Embiggen_P2_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: 9
+    axis: 8
     joyNum: 2
   - serializedVersion: 3
     m_Name: Debigulate_P2_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 9
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Embiggen_P2_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 7
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Debigulate_P2_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 6
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Press_P2_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 0
+    altNegativeButton:
+    altPositiveButton: space
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 10
+    type: 0
+    axis: 0
     joyNum: 2
   - serializedVersion: 3
     m_Name: MoveX_P3_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: x axis
+    axis: 0
     joyNum: 3
   - serializedVersion: 3
     m_Name: MoveY_P3_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: x axis
+    axis: 1
     joyNum: 3
   - serializedVersion: 3
     m_Name: AimX_P3_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: 4
+    axis: 3
     joyNum: 3
   - serializedVersion: 3
     m_Name: AimY_P3_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: 5
+    axis: 4
     joyNum: 3
   - serializedVersion: 3
     m_Name: Embiggen_P3_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: 9
+    axis: 8
     joyNum: 3
   - serializedVersion: 3
     m_Name: Debigulate_P3_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 9
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Embiggen_P3_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 7
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Debigulate_P3_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 6
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Press_P3_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 0
+    altNegativeButton:
+    altPositiveButton: space
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 10
+    type: 0
+    axis: 0
     joyNum: 3
   - serializedVersion: 3
     m_Name: MoveX_P4_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: x axis
+    axis: 0
     joyNum: 4
   - serializedVersion: 3
     m_Name: MoveY_P4_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: x axis
+    axis: 1
     joyNum: 4
   - serializedVersion: 3
     m_Name: AimX_P4_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: 4
+    axis: 3
     joyNum: 4
   - serializedVersion: 3
     m_Name: AimY_P4_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: 5
+    axis: 4
     joyNum: 4
   - serializedVersion: 3
     m_Name: Embiggen_P4_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 8
+    joyNum: 4
+  - serializedVersion: 3
+    m_Name: Debigulate_P4_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
     axis: 9
     joyNum: 4
   - serializedVersion: 3
+    m_Name: Embiggen_P4_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 7
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 4
+  - serializedVersion: 3
     m_Name: Debigulate_P4_WIN
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton:
+    positiveButton: joystick button 6
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 4
+  - serializedVersion: 3
+    m_Name: Press_P4_WIN
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 0
+    altNegativeButton:
+    altPositiveButton: space
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 10
+    type: 0
+    axis: 0
     joyNum: 4
   - serializedVersion: 3
     m_Name: MoveX_P1_OSX
@@ -686,13 +974,13 @@ InputManager:
     positiveButton: d
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
-    axis: x axis
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: MoveY_P1_OSX
@@ -700,15 +988,15 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: w
     positiveButton: s
-    altNegativeButton: space
-    altPositiveButton: 
-    gravity: 1000
+    altNegativeButton: 
+    altPositiveButton: space
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
-    axis: y axis
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: AimX_P1_OSX
@@ -718,13 +1006,13 @@ InputManager:
     positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
-    axis: 3
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: AimY_P1_OSX
@@ -734,331 +1022,619 @@ InputManager:
     positiveButton: up
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
-    axis: 4
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: Embiggen_P1_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: e
-    positiveButton: 
+    negativeButton: 
+    positiveButton: e
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
-    axis: 5
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: Debigulate_P1_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: q
-    positiveButton: 
+    negativeButton: 
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: MoveX_P1_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: MoveY_P1_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 1
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: AimX_P1_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 2
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: AimY_P1_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 3
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Embiggen_P1_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 4
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Debigulate_P1_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 5
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Embiggen_P1_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 7
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Debigulate_P1_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 6
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Press_P1_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 16
+    altNegativeButton:
+    altPositiveButton: space
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 6
+    type: 0
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: MoveX_P2_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: x axis
+    axis: 0
     joyNum: 2
   - serializedVersion: 3
     m_Name: MoveY_P2_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: y axis
+    axis: 1
     joyNum: 2
   - serializedVersion: 3
     m_Name: AimX_P2_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 2
   - serializedVersion: 3
     m_Name: AimY_P2_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: 4
+    axis: 3
     joyNum: 2
   - serializedVersion: 3
     m_Name: Embiggen_P2_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: 5
+    axis: 4
     joyNum: 2
   - serializedVersion: 3
     m_Name: Debigulate_P2_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 5
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Embiggen_P2_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 7
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Debigulate_P2_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 6
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Press_P2_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 16
+    altNegativeButton:
+    altPositiveButton: space
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 6
+    type: 0
+    axis: 0
     joyNum: 2
   - serializedVersion: 3
     m_Name: MoveX_P3_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: x axis
+    axis: 0
     joyNum: 3
   - serializedVersion: 3
     m_Name: MoveY_P3_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: y axis
+    axis: 1
     joyNum: 3
   - serializedVersion: 3
     m_Name: AimX_P3_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 3
   - serializedVersion: 3
     m_Name: AimY_P3_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: 4
+    axis: 3
     joyNum: 3
   - serializedVersion: 3
     m_Name: Embiggen_P3_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 4
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Debigulate_P3_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
     axis: 5
     joyNum: 3
   - serializedVersion: 3
+    m_Name: Embiggen_P3_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 7
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 3
+  - serializedVersion: 3
     m_Name: Debigulate_P3_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton:
+    positiveButton: joystick button 6
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Press_P3_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 16
+    altNegativeButton:
+    altPositiveButton: space
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 6
+    type: 0
+    axis: 0
     joyNum: 3
   - serializedVersion: 3
     m_Name: MoveX_P4_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: x axis
+    axis: 0
     joyNum: 4
   - serializedVersion: 3
     m_Name: MoveY_P4_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
-    axis: y axis
+    axis: 1
     joyNum: 4
   - serializedVersion: 3
     m_Name: AimX_P4_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 4
   - serializedVersion: 3
     m_Name: AimY_P4_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 3
+    joyNum: 4
+  - serializedVersion: 3
+    m_Name: Embiggen_P4_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
     axis: 4
     joyNum: 4
   - serializedVersion: 3
-    m_Name: Embiggen_P4_OSX
+    m_Name: Debigulate_P4_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 0
+    dead: 0.02
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 2
     axis: 5
     joyNum: 4
   - serializedVersion: 3
+    m_Name: Embiggen_P4_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 7
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 4
+  - serializedVersion: 3
     m_Name: Debigulate_P4_OSX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    negativeButton:
+    positiveButton: joystick button 6
+    altNegativeButton:
+    altPositiveButton:
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 4
+  - serializedVersion: 3
+    m_Name: Press_P4_OSX
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton:
+    positiveButton: joystick button 16
+    altNegativeButton:
+    altPositiveButton: space
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
-    axis: 6
+    type: 0
+    axis: 0
     joyNum: 4
