@@ -16,14 +16,16 @@ public class MovingPlatform : MonoBehaviour {
 
     public bool pingPong = true;
 
+    protected bool hitEnd;
+
 	// Use this for initialization
 	void Start () {
 		
 	}
 
     // Update is called once per frame
-    void Update() {
-
+    protected virtual void Update() {
+        hitEnd = false;
         float length = (startPosition.position - endPosition.position).magnitude;
 
         float normalizedSpeed = (movementSpeed * Time.deltaTime) / length;
@@ -45,18 +47,20 @@ public class MovingPlatform : MonoBehaviour {
             {
                 currentPosition = Mathf.Clamp01(currentPosition);
                 movingForward = !movingForward;
-                    
+                hitEnd = true;
             }
         } else
         {
             if (currentPosition > 1f)
             {
                 currentPosition = 0f;
+                hitEnd = true;
             }
 
             if(currentPosition < 0f)
             {
                 currentPosition = 1f;
+                hitEnd = true;
             }
         }
 
@@ -64,7 +68,7 @@ public class MovingPlatform : MonoBehaviour {
 
     }
 
-    void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         Gizmos.DrawLine(startPosition.position, endPosition.position);
     }
