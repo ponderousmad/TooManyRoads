@@ -112,6 +112,29 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &140834241 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1340824680144422, guid: 4ff9e9dcd4e6833479e6dd23a8069968,
+    type: 2}
+  m_PrefabInternal: {fileID: 2040154973}
+--- !u!114 &140834242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 140834241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c39897a13d04b2691ebc328cc5ce57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileType1: {fileID: 1503055886885436, guid: a69c707f473034ec4a0be85a34eeaf18,
+    type: 2}
+  projectileType2: {fileID: 1442003381833664, guid: 0616a85b20f394a08b8e6389a385e7f3,
+    type: 2}
+  snapAim: 1
+  projectileSpeed: 10
+  fireRate: 1
 --- !u!1 &995094197
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +647,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114138866689440382, guid: 4ff9e9dcd4e6833479e6dd23a8069968, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4ff9e9dcd4e6833479e6dd23a8069968, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2098568965

@@ -95,6 +95,9 @@ MonoBehaviour:
     type: 2}
   projectileType2: {fileID: 1442003381833664, guid: 0616a85b20f394a08b8e6389a385e7f3,
     type: 2}
+  snapAim: 0
+  projectileSpeed: 10
+  fireRate: 2
 --- !u!114 &114265719419864162
 MonoBehaviour:
   m_ObjectHideFlags: 1

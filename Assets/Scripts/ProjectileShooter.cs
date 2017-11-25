@@ -6,6 +6,7 @@ public class ProjectileShooter : MonoBehaviour {
 
 	public GameObject projectileType1;
 	public GameObject projectileType2;
+	public bool snapAim = true;
 
 	public float projectileSpeed = 10.0f;
 	public float fireRate = 1.0f;
@@ -41,12 +42,14 @@ public class ProjectileShooter : MonoBehaviour {
 			return;
 		}
 
-		Vector3 offset = new Vector3 (2.0f, 0, 0); // TODO: get from "Player Aim. Also consider player scale."
+		Vector2 aim = GetPlayerAim ();
+		Debug.Log ("aim: " + aim);
+		Vector3 offset = new Vector3 (aim.x, aim.y, 0); // TODO: data drive? consider player scale too
 
 		GameObject projectile = Instantiate (projectileType, transform.position + offset, Quaternion.identity);
 		KinematicProjectile kinBehavior = projectile.GetComponent<KinematicProjectile> ();
 		if (kinBehavior != null) {
-			kinBehavior.SetVelocity (new Vector2 (1.0f, 0.0f) * projectileSpeed);
+			kinBehavior.SetVelocity (aim * projectileSpeed);
 		}
 
 		mShootTimer = (1 / fireRate);
@@ -58,6 +61,17 @@ public class ProjectileShooter : MonoBehaviour {
 			return(false);
 		}
 
+		//AmmoController ac = GetComponent<AmmoController> ();
+
 		return(true);
+	}
+
+	private Vector2 GetPlayerAim()
+	{
+		Player p = GetComponent<Player> ();
+		if (p != null) {
+			return(p.GetAim (snapAim));
+		}
+		return new Vector2(0.0f, 0.0f);
 	}
 }
