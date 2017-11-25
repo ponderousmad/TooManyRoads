@@ -54,7 +54,8 @@ public class Embiggener : MonoBehaviour {
                 mScaleRate = restoreRate;
             }
         }
-            
+        
+		/*
         // for testing
         float scaleUp = Input.GetAxis("Fire1");
         if(scaleUp > 0)
@@ -69,6 +70,7 @@ public class Embiggener : MonoBehaviour {
                 Embiggen(-0.1f);
             }
         }
+		*/
 	}
 
     public void Embiggen(float amount)

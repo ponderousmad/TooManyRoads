@@ -7,7 +7,6 @@ public class KinematicProjectile : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SetVelocity(new Vector2 (1.0f, 0.0f));
 	}
 	
 	// Update is called once per frame
@@ -18,7 +17,6 @@ public class KinematicProjectile : MonoBehaviour {
 		if (hitObject == null) {
 			transform.position = transform.position + new Vector3(mVelocity.x, mVelocity.y, 0) * Time.deltaTime;
 		} else {
-			Debug.Log (hitObject.GetType().FullName);
 			CollisionResponse cr = this.gameObject.GetComponent<CollisionResponse>();
 			if (cr != null) {
 				cr.Collision (hitObject);
@@ -27,7 +25,7 @@ public class KinematicProjectile : MonoBehaviour {
 		}
 	}
 
-	void SetVelocity(Vector2 vel)
+	public void SetVelocity(Vector2 vel)
 	{
 		mVelocity = vel;
 	}
