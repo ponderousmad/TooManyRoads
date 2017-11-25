@@ -20,6 +20,17 @@ public class GameLevel : MonoBehaviour {
 		level = JsonUtility.FromJson<LevelData>(data);
 	}
 
+	[ContextMenu ("Add")]
+	void Add()
+	{
+		AddObject ("test", Vector2.zero);
+	}
+
+	void AddObject(string type, Vector2 position)
+	{
+		level.levelObjects.Add (new LevelObject (type, position));
+	}
+
 	// Use this for initialization
 	void Start () {
 		
