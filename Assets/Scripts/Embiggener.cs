@@ -15,8 +15,8 @@ public class Embiggener : MonoBehaviour {
     //private float mMinScale = 0.0f;
     //public float maxScale = 1.0f;
 
-    private float mCurrentScaleValue;
-    private float mTargetScaleValue;
+    public float mCurrentScaleValue;
+    public float mTargetScaleValue;
     private float mScaleRate;
     private Vector3 mOriginalScale;
 
@@ -71,7 +71,7 @@ public class Embiggener : MonoBehaviour {
         }
 	}
 
-    void Embiggen(float amount)
+    public void Embiggen(float amount)
     {
         mTargetScaleValue = Mathf.Clamp(mTargetScaleValue+amount, 0.0f, 1.0f);
         mScaleRate = scaleRate;
