@@ -13,4 +13,10 @@ public class LevelData
 public class LevelObject {
 	public string type;
 	public Vector2 position;
+
+	public LevelObject(string objectType, Vector2 pos)
+	{
+		type = objectType;
+		position = pos;
+	}
 }
