@@ -6,15 +6,20 @@ public class ProjectileShooter : MonoBehaviour {
 
 	public GameObject projectileType1;
 	public GameObject projectileType2;
+	public bool snapAim = true;
 
 	public float projectileSpeed = 10.0f;
 	public float fireRate = 1.0f;
+	public float requiredAmmo = 1.0f;
 
 	private float mShootTimer;
+
+	private AmmoController mAmmoControl;
 
 	// Use this for initialization
 	void Start () {
 		mShootTimer = 0;
+		mAmmoControl = GetComponent<AmmoController> ();
 	}
 	
 	// Update is called once per frame
@@ -31,25 +36,28 @@ public class ProjectileShooter : MonoBehaviour {
 		if (fire2 > 0 && CanShoot()) {
 			ShootProjectile (projectileType2);
 		}
-
 	}
 
 	void ShootProjectile(GameObject projectileType)
 	{
+		Debug.Log ("shooting projectile");
 		if (projectileType == null) {
 			Debug.Log ("No projectile type given!");
 			return;
 		}
 
-		Vector3 offset = new Vector3 (2.0f, 0, 0); // TODO: get from "Player Aim. Also consider player scale."
+		Vector2 aim = GetPlayerAim ();
+		Debug.Log ("aim: " + aim);
+		Vector3 offset = new Vector3 (aim.x, aim.y, 0); // TODO: data drive? consider player scale too
 
 		GameObject projectile = Instantiate (projectileType, transform.position + offset, Quaternion.identity);
 		KinematicProjectile kinBehavior = projectile.GetComponent<KinematicProjectile> ();
 		if (kinBehavior != null) {
-			kinBehavior.SetVelocity (new Vector2 (1.0f, 0.0f) * projectileSpeed);
+			kinBehavior.SetVelocity (aim * projectileSpeed);
 		}
 
 		mShootTimer = (1 / fireRate);
+		mAmmoControl.UseAmmo (requiredAmmo);
 	}
 
 	private bool CanShoot()
@@ -57,7 +65,27 @@ public class ProjectileShooter : MonoBehaviour {
 		if (mShootTimer > 0) {
 			return(false);
 		}
+			
+		if (mAmmoControl != null && !mAmmoControl.HasAmmo(requiredAmmo)) {
+			Debug.Log ("no ammo");
+			return(false);
+		}
 
 		return(true);
+	}
+
+	private Vector2 GetPlayerAim()
+	{
+		if (transform.parent != null) {
+			if (transform.parent.gameObject != null) {
+				Player p = transform.parent.gameObject.GetComponent<Player> ();
+				if (p != null) {
+					Debug.Log ("got aim from player");
+					return(p.GetAim (snapAim));
+				}
+			}
+		}
+
+		return(new Vector2(0.0f, 0.0f));
 	}
 }

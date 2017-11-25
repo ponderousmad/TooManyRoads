@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PhysCharacterController : MonoBehaviour {
@@ -56,7 +55,7 @@ public class PhysCharacterController : MonoBehaviour {
 			updatedVelocity.y = 0;
 			rigidBody.velocity = updatedVelocity;
 
-			if (isClinging) {
+            if (isClinging && !isOnGround) {
                 rigidBody.velocity = new Vector2(wallJumpImpulse.x * -lastDir, wallJumpImpulse.y);
                 smoothVelocity.currentValue = rigidBody.velocity.x;
                 smoothVelocity.velocity = smoothVelocity.currentValue;
@@ -93,7 +92,7 @@ public class PhysCharacterController : MonoBehaviour {
 			}
 		}
 
-		if (isClinging) {
+        if (isClinging && !isOnGround) {
             moveForce.y = Mathf.Max(moveForce.y, slideConstantGravity);
 		}
 		debugIsClinging = isClinging;
@@ -145,7 +144,7 @@ public class PhysCharacterController : MonoBehaviour {
 	void OnClinged()
 	{
 		isClinging = true;
-		jumpCount = 0;
+		jumpCount = 1;
 	}
 
 	void OnLanded()

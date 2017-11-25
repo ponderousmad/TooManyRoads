@@ -40,6 +40,4 @@ public class GameLevel : MonoBehaviour {
 	void Update () {
 		
 	}
-
-
 }
