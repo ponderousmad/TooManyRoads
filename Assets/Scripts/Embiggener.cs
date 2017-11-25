@@ -50,8 +50,8 @@ public class Embiggener : MonoBehaviour {
             }
             else
             {
-                mTargetScaleValue = initialScaleLerp;
-                mScaleRate = restoreRate;
+                float targetScaleDiff = initialScaleLerp - mCurrentScaleValue;
+                mTargetScaleValue += Mathf.Min(Mathf.Abs(targetScaleDiff), restoreRate * Time.deltaTime) * Mathf.Sign(targetScaleDiff);
             }
         }
         
