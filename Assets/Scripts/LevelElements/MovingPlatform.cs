@@ -14,6 +14,8 @@ public class MovingPlatform : MonoBehaviour {
     public float currentPosition = 0.5f;
     public bool movingForward = true;
 
+    public bool pingPong = true;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -37,11 +39,25 @@ public class MovingPlatform : MonoBehaviour {
                 currentPosition -= normalizedSpeed;
             }
         }
-
-        if (currentPosition > 1f || currentPosition < 0f)
+        if (pingPong)
         {
-            currentPosition = Mathf.Clamp01(currentPosition);
-            movingForward = !movingForward;
+            if (currentPosition > 1f || currentPosition < 0f)
+            {
+                currentPosition = Mathf.Clamp01(currentPosition);
+                movingForward = !movingForward;
+                    
+            }
+        } else
+        {
+            if (currentPosition > 1f)
+            {
+                currentPosition = 0f;
+            }
+
+            if(currentPosition < 0f)
+            {
+                currentPosition = 1f;
+            }
         }
 
         this.transform.position = Vector3.Lerp(startPosition.position, endPosition.position, currentPosition);
