@@ -1,6 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
+
+[System.Serializable]
+public class LevelData
+{
+	public List<LevelObject> levelObjects = new List<LevelObject> ();
+}
 
 [System.Serializable]
 public class LevelObject {
