@@ -15,7 +15,7 @@ public class EmbiggeningCollider : CollisionResponse {
 	void Update () {
 		
 	}
-		
+
 	public override void Collision(Collider2D other)
 	{
 		Embiggener embiggener = other.GetComponent<Embiggener>();
