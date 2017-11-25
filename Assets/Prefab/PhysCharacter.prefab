@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 70960917839749108}
   - component: {fileID: 114138866689440382}
   - component: {fileID: 114265719419864162}
+  - component: {fileID: 114613097888675052}
   m_Layer: 0
   m_Name: PhysCharacter
   m_TagString: Untagged
@@ -134,6 +135,18 @@ MonoBehaviour:
   debugLastDir: 0
   debugRightDot: 0
   debugRightDotCheck: 0
+  attachFollower: {fileID: 0}
+--- !u!114 &114613097888675052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1340824680144422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e63e598dd934a5a984f9fae00b7f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212506073260582994
 SpriteRenderer:
   m_ObjectHideFlags: 1
