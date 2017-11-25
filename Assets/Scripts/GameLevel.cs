@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameLevel : MonoBehaviour {
 
+	public List<LevelObject> levelObjects = new List<LevelObject>();
+
 	// Use this for initialization
 	void Start () {
 		
