@@ -18,18 +18,35 @@ public class PhysCharacterController : MonoBehaviour {
 	public float debugRightDot;
 	public float debugRightDotCheck;
 
+    private bool isOnGround;
 	private bool isClinging;
 	private int jumpCount;
 	private Rigidbody2D rigidBody;
 	private float lastDir;
 
+    public SmoothCD smoothVelocity = new SmoothCD();
+
+    public Transform attachFollower;
+    private Vector3 lastFollowerTransform;
+
 	// Use this for initialization
 	void Start () {
+        isOnGround = true;
 		isClinging = false;
 		jumpCount = 0;
 		rigidBody = GetComponent<Rigidbody2D> ();
 		lastDir = 0.0f;
 	}
+
+    private void UpdateFollower()
+    {
+        if(attachFollower != null)
+        {
+            Vector3 diff = attachFollower.position - lastFollowerTransform;
+            transform.position += diff;
+            lastFollowerTransform = attachFollower.position;
+        }
+    }
 
 	void Update() {
 		bool canJump = jumpCount < maxJumps;
@@ -39,12 +56,19 @@ public class PhysCharacterController : MonoBehaviour {
 			rigidBody.velocity = updatedVelocity;
 
 			if (isClinging) {
-				rigidBody.AddForce (new Vector2 (wallJumpImpulse.x * -lastDir, wallJumpImpulse.y), ForceMode2D.Impulse);
+                rigidBody.velocity = new Vector2(wallJumpImpulse.x * -lastDir, wallJumpImpulse.y);
+                smoothVelocity.currentValue = rigidBody.velocity.x;
+                smoothVelocity.velocity = smoothVelocity.currentValue;
+//				rigidBody.AddForce (new Vector2 (wallJumpImpulse.x * -lastDir, wallJumpImpulse.y), ForceMode2D.Impulse);
 			} else {
-				rigidBody.AddForce (new Vector2 (0.0f, jumpImpulse), ForceMode2D.Impulse);
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpImpulse);
+//				rigidBody.AddForce (new Vector2 (0.0f, jumpImpulse), ForceMode2D.Impulse);
 			}
 			++jumpCount;
+            isOnGround = false;
 		}
+
+        UpdateFollower();
 	}
 
 	// Update is called once per frame
@@ -52,7 +76,13 @@ public class PhysCharacterController : MonoBehaviour {
 		Vector2 moveForce = rigidBody.velocity;
 		float forward = Input.GetAxisRaw ("Horizontal") * movementSpeed;
 
-		moveForce.x = forward;
+        smoothVelocity.smoothTime = isOnGround ? 0.1f : 0.25f;
+        smoothVelocity.targetValue = forward;
+        smoothVelocity.currentValue = moveForce.x;
+        smoothVelocity.Update(Time.fixedDeltaTime);
+
+        moveForce.x = smoothVelocity.currentValue;
+
 		float newDir = 0.0f;
 		newDir = Mathf.Approximately(forward, 0.0f) ? 0.0f : Mathf.Sign (forward);
 
@@ -63,15 +93,15 @@ public class PhysCharacterController : MonoBehaviour {
 		}
 
 		if (isClinging) {
-			moveForce.y = slideConstantGravity;
+            moveForce.y = Mathf.Max(moveForce.y, slideConstantGravity);
 		}
 		debugIsClinging = isClinging;
 
 		lastDir = newDir;
 		debugLastDir = lastDir;
 
-		debugVelocity = moveForce;
-		rigidBody.velocity = moveForce;
+        debugVelocity = moveForce;
+        rigidBody.velocity = moveForce;
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -84,7 +114,8 @@ public class PhysCharacterController : MonoBehaviour {
 				OnLanded ();
 
 				if (collision.gameObject.CompareTag ("Mover")) {
-					transform.parent = collision.gameObject.transform;
+                    attachFollower = collision.transform;
+                    lastFollowerTransform = attachFollower.position;
 				}
 			} else {
 				debugRightDot = Vector2.Dot(contacts[0].normal, Vector2.right * -lastDir);
@@ -101,7 +132,12 @@ public class PhysCharacterController : MonoBehaviour {
 
 	void OnCollisionExit2D(Collision2D collision)
 	{
-		transform.parent = null;
+        UpdateFollower();
+
+        if(collision.transform == attachFollower)
+        {
+            attachFollower = null;
+        }
 		isClinging = false;
 	}
 
@@ -113,6 +149,7 @@ public class PhysCharacterController : MonoBehaviour {
 
 	void OnLanded()
 	{
+        isOnGround = true;
 		jumpCount = 0;
 	}
 }
