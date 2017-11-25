@@ -71,7 +71,7 @@ public class Embiggener : MonoBehaviour {
         }
 	}
 
-    void Embiggen(float amount)
+    public void Embiggen(float amount)
     {
         mTargetScaleValue = Mathf.Clamp(mTargetScaleValue+amount, 0.0f, 1.0f);
         mScaleRate = scaleRate;
