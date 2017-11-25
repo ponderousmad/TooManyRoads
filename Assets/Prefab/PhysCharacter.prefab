@@ -30,21 +30,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1705936682450854
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4712918130710338}
-  m_Layer: 0
-  m_Name: GroundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &4351555798855154
 Transform:
   m_ObjectHideFlags: 1
@@ -52,24 +37,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1340824680144422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 0.452, z: 0}
+  m_LocalPosition: {x: 0.07, y: -2.4, z: 0}
   m_LocalScale: {x: 3.8399196, y: 6.1158276, z: 1}
-  m_Children:
-  - {fileID: 4712918130710338}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4712918130710338
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1705936682450854}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.07, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4351555798855154}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50138557436176646
@@ -86,7 +57,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 1.2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -100,7 +71,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1340824680144422}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 66a7064b24791f541b4f04ff4d445742, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -119,9 +90,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  airMovementSpeed: 5
+  fallingMoveDamping: 0.8
   jumpImpulse: 5
   slope: 45
-  maxJumps: 1
+  wallSlope: 15
+  maxJumps: 2
+  slideConstantGravity: -2
+  wallJumpImpulse: {x: 5, y: 6}
+  wallJumpDisableXTime: 0.5
+  debugVelocity: {x: 0, y: 0}
+  debugIsClinging: 0
+  debugContactNormal: {x: 0, y: 0}
+  debugLastDir: 0
+  debugRightDot: 0
+  debugRightDotCheck: 0
 --- !u!212 &212506073260582994
 SpriteRenderer:
   m_ObjectHideFlags: 1
