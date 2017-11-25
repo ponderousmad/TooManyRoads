@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PhysCharacterController : MonoBehaviour {
-	public float movementSpeed;
-	public float jumpImpulse;
-	public LayerMask groundSurfaces;
-	public Transform basePoint;
-	public float groundCheckRadius;
+	public float movementSpeed = 5.0f;
+	public float jumpImpulse = 5.0f;
+	public float slope = 45.0f; // in degrees
+	public int maxJumps = 1;
 
-	private bool isGrounded = false;
+	private bool isGrounded;
+	private int jumpCount;
 	private Rigidbody2D rigidBody;
 
 	// Use this for initialization
 	void Start () {
+		isGrounded = false;
+		jumpCount = 0;
 		rigidBody = GetComponent<Rigidbody2D> ();
 	}
 
@@ -27,13 +29,28 @@ public class PhysCharacterController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		isGrounded = Physics2D.OverlapCircle (basePoint.position, groundCheckRadius);
-		Debug.Log ("IS GROUNDED: " + isGrounded);
-
 		Vector2 moveForce = rigidBody.velocity;
 		float forward = Input.GetAxis ("Horizontal") * movementSpeed;
 		moveForce.x = forward;
 
 		rigidBody.velocity = moveForce;
+	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		//ContactPoint2D[] contacts;
+		//collision.GetContacts(contacts);
+
+		//if (contacts.Length > 0) {
+		//	if (Vector2.Dot(contacts[0].normal, Vector2.up) > Mathf.Cos(Mathf.Deg2Rad * slope)) {
+		//		OnLanded();
+		//	}
+		//}
+	}
+
+	void OnLanded()
+	{
+		isGrounded = true;
+		jumpCount = 0;
 	}
 }

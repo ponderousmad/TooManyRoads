@@ -442,16 +442,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 920567013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da5f4bffd7e541e45a36661992c88d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2870453a2625c9c419508a28e509c675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
   jumpImpulse: 5
-  groundSurfaces:
-    serializedVersion: 2
-    m_Bits: 0
-  basePoint: {fileID: 911758263}
-  groundCheckRadius: 0.1
+  slope: 45
+  maxJumps: 1
 --- !u!212 &920567016
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -662,12 +659,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1842098958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400ba88562c95fd47b15662602c2bd77, type: 3}
+  m_Script: {fileID: 11500000, guid: 9253f84ae1826a940a29a61381485d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: {x: 1, y: 0}
-  moveSpeed: {x: 2, y: 0}
-  moveTime: 3
+  moveSpeed: {x: 1, y: 0}
+  moveTime: 0
 --- !u!1 &1940228470
 GameObject:
   m_ObjectHideFlags: 0
