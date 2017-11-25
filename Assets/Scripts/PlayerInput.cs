@@ -157,7 +157,7 @@ public class PlayerInput {
 		return definitions.ToString();
 	}
 
-	private PlayerInput(int number)
+	public PlayerInput(int number)
 	{
 		string postfix = Postfix(number, Application.platform);
 		moveAxisX = Axis.MoveX.ToString() + postfix;
