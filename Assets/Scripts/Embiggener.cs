@@ -11,21 +11,38 @@ public class Embiggener : MonoBehaviour {
 
     public float restoreRate = 0.1f;
     public float restoreDelay = 1.0f;
-    private float mRestoreTimer = 0.0f;
-    //private float mMinScale = 0.0f;
-    //public float maxScale = 1.0f;
+    
+	public bool scalingAffectsMass = true;
 
-    internal float mCurrentScaleValue;
+	internal float mCurrentScaleValue;
     internal float mTargetScaleValue;
+
+	private float mRestoreTimer = 0.0f;
     private float mScaleRate;
     private Vector3 mOriginalScale;
+	private float mOriginalMass;
+	private float mOriginalVolume;
+
+	private Rigidbody2D mRigidbody;
+
+	void Awake()
+	{
+		mCurrentScaleValue = initialScaleLerp;
+		mTargetScaleValue = mCurrentScaleValue;
+		mOriginalScale = transform.localScale;
+		mOriginalVolume = mOriginalScale.x * mOriginalScale.y * mOriginalScale.z;
+
+		mRigidbody = GetComponent<Rigidbody2D> ();
+		if (mRigidbody != null) {
+			mOriginalMass = mRigidbody.mass;
+		}
+
+		UpdateScale();
+	}
 
 	// Use this for initialization
 	void Start () {
-        mCurrentScaleValue = initialScaleLerp;
-        mTargetScaleValue = mCurrentScaleValue;
-        mOriginalScale = transform.localScale;
-        UpdateScale();
+
 	}
 	
 	// Update is called once per frame
@@ -54,23 +71,7 @@ public class Embiggener : MonoBehaviour {
                 mTargetScaleValue += Mathf.Min(Mathf.Abs(targetScaleDiff), restoreRate * Time.deltaTime) * Mathf.Sign(targetScaleDiff);
             }
         }
-        
-		/*
-        // for testing
-        float scaleUp = Input.GetAxis("Fire1");
-        if(scaleUp > 0)
-        {
-            Embiggen(0.1f);
-        } 
-        else
-        {
-            float scaleDown = Input.GetAxis("Fire2");
-            if(scaleDown > 0)
-            {
-                Embiggen(-0.1f);
-            }
-        }
-		*/
+
 	}
 
     public void Embiggen(float amount)
@@ -80,6 +81,13 @@ public class Embiggener : MonoBehaviour {
         mRestoreTimer = restoreDelay;
     }
 
+	public void SetScaleValue(float value)
+	{
+		mCurrentScaleValue = Mathf.Clamp (value, 0.0f, 1.0f);
+		mTargetScaleValue = mCurrentScaleValue;
+		UpdateScale ();
+	}
+
     private void UpdateScale()
     {
         float t = GetScaleLerpAmount(mCurrentScaleValue);
@@ -87,6 +95,11 @@ public class Embiggener : MonoBehaviour {
         float newY = mOriginalScale.y * Mathf.Lerp(minScale.y, maxScale.y, t);
         float newZ = mOriginalScale.z * Mathf.Lerp(minScale.z, maxScale.z, t);
         transform.localScale = new Vector3(newX, newY, newZ);
+
+		if (scalingAffectsMass && mRigidbody != null) {
+			float roughVolume = transform.localScale.x * transform.localScale.y * transform.localScale.z;
+			mRigidbody.mass = mOriginalMass * (roughVolume / mOriginalVolume);
+		}
     }
 
     private float GetScaleLerpAmount(float scaleValue)
