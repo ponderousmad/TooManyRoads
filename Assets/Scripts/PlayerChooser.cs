@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerInfo {
-	public PlayerInfo () {
+	public PlayerInfo (int id) {
 		settings = new PlayerSettings ();
+		input = new PlayerInput (id + 1);
 	}
 
 	public GameObject activeUI;
 	public GameObject chooseUI;
 	public bool isActive;
 	public PlayerSettings settings;
+	public PlayerInput input;
 }
 
 public class PlayerChooser : MonoBehaviour {
@@ -19,9 +21,8 @@ public class PlayerChooser : MonoBehaviour {
 
 	public string mainSceneName;
 	public int minPlayers = 1;
-	public GameObject activeUIPrefab;
-	public GameObject chooseUIPrefab;
-	public Transform[] uiAnchors;
+	public GameObject[] activeUIs;
+	public GameObject[] chooseUIs;
 
 	private PlayerInfo[] players;
 	private int currentPlayers = 0;
@@ -31,28 +32,34 @@ public class PlayerChooser : MonoBehaviour {
 		players = new PlayerInfo[MAX_PLAYERS];
 
 		for (int i = 0; i < MAX_PLAYERS; ++i) {
-			players [i] = new PlayerInfo ();
-			players [i].chooseUI = Instantiate (chooseUIPrefab, uiAnchors [i].position, Quaternion.identity);
-			players [i].activeUI = Instantiate (activeUIPrefab, uiAnchors [i].position, Quaternion.identity);
+			players [i] = new PlayerInfo (i);
+			players [i].chooseUI = chooseUIs[i];
+			players [i].activeUI = activeUIs[i];
 			players [i].activeUI.SetActive (false);
 			players [i].isActive = false;
 		}
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown ("Jump")) {
-			if (!players [0].isActive) {
-				ShowPlayer (0);
-			}
-		} else if (Input.GetButtonDown ("Fire1")) {
-			if (players [0].isActive) {
-				HidePlayer (0);
-			}
-		}
+		InputCheck ();
+	}
 
-		if (Input.GetButtonDown ("Fire2")) {
-			if (currentPlayers >= minPlayers) {
+	void InputCheck () {
+		for (int i = 0; i < MAX_PLAYERS; ++i) {
+			// Join or leave check
+			if (players [i].input.FireEmbiggen) {
+				if (!players [i].isActive) {
+					ShowPlayer (i);
+				}
+			} else if (players[i].input.FireDebigulate) {
+				if (players [i].isActive) {
+					HidePlayer (i);
+				}
+			}
+
+			// Start the game check
+			if (players[i].input.Jump && currentPlayers >= minPlayers) {
 				StartGame ();
 			}
 		}
@@ -81,5 +88,9 @@ public class PlayerChooser : MonoBehaviour {
 			}
 		}
 		SceneManager.LoadSceneAsync (mainSceneName);
+	}
+
+	public void GetPlayerInfo(int id, ref PlayerInfo info) {
+		info = players [id];
 	}
 }

@@ -13,7 +13,14 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        bool debugInput = false;
+        if(debugInput)
+        {
+            mInput.Aim(false);
+            Debug.Log("Move: " + mInput.MoveX.ToString() + ", " + mInput.MoveY.ToString());
+            Debug.Log("Fire Embiggen: " + mInput.FireEmbiggen.ToString());
+            Debug.Log("Fire Debigulate: " + mInput.FireDebigulate.ToString());
+        }
 	}
 
 	public Vector2 GetAim(bool snap)
