@@ -6,23 +6,32 @@ public class PhysCharacterController : MonoBehaviour {
 	public float movementSpeed = 5.0f;
 	public float jumpImpulse = 5.0f;
 	public float slope = 45.0f; // in degrees
+	public float wallSlope = 15.0f;
 	public int maxJumps = 2;
 
-	private bool isGrounded;
+	// Debug variables
+	public Vector2 debugVelocity;
+	public bool debugIsClinging;
+
+	private bool isClinging;
 	private int jumpCount;
 	private Rigidbody2D rigidBody;
+	private float lastDir;
 
 	// Use this for initialization
 	void Start () {
-		isGrounded = false;
+		isClinging = false;
 		jumpCount = 0;
 		rigidBody = GetComponent<Rigidbody2D> ();
+		lastDir = 0.0f;
 	}
 
 	void Update() {
 		bool canJump = jumpCount < maxJumps;
-		if(canJump && Input.GetButtonDown("Jump"))
-		{
+		if (canJump && Input.GetButtonDown("Jump")) {
+			Vector2 updatedVelocity = rigidBody.velocity;
+			updatedVelocity.y = 0;
+			rigidBody.velocity = updatedVelocity;
 			rigidBody.AddForce(new Vector2(0.0f, jumpImpulse), ForceMode2D.Impulse);
 			++jumpCount;
 		}
@@ -34,6 +43,13 @@ public class PhysCharacterController : MonoBehaviour {
 		float forward = Input.GetAxis ("Horizontal") * movementSpeed;
 		moveForce.x = forward;
 
+		if (isClinging) { // Are we still clinging?
+			
+		}
+
+		lastDir = Mathf.Sign (forward);
+
+		debugVelocity = moveForce;
 		rigidBody.velocity = moveForce;
 	}
 
@@ -43,11 +59,15 @@ public class PhysCharacterController : MonoBehaviour {
 		collision.GetContacts(contacts);
 
 		if (contacts.Length > 0) {
-			if (Vector2.Dot(contacts[0].normal, Vector2.up) > Mathf.Cos(Mathf.Deg2Rad * slope)) {
-				OnLanded();
+			if (Vector2.Dot (contacts [0].normal, Vector2.up) > Mathf.Cos (Mathf.Deg2Rad * slope)) {
+				OnLanded ();
 
 				if (collision.gameObject.CompareTag ("Mover")) {
 					transform.parent = collision.gameObject.transform;
+				}
+			} else {
+				if (Vector2.Dot(contacts[0].normal, Vector2.right * lastDir) > Mathf.Cos(Mathf.Deg2Rad * wallSlope)) {
+					isClinging = true;
 				}
 			}
 		}
@@ -60,7 +80,6 @@ public class PhysCharacterController : MonoBehaviour {
 
 	void OnLanded()
 	{
-		isGrounded = true;
 		jumpCount = 0;
 	}
 }
