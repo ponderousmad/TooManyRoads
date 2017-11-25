@@ -10,12 +10,16 @@ public class ProjectileShooter : MonoBehaviour {
 
 	public float projectileSpeed = 10.0f;
 	public float fireRate = 1.0f;
+	public float requiredAmmo = 1.0f;
 
 	private float mShootTimer;
+
+	private AmmoController mAmmoControl;
 
 	// Use this for initialization
 	void Start () {
 		mShootTimer = 0;
+		mAmmoControl = GetComponent<AmmoController> ();
 	}
 	
 	// Update is called once per frame
@@ -32,11 +36,11 @@ public class ProjectileShooter : MonoBehaviour {
 		if (fire2 > 0 && CanShoot()) {
 			ShootProjectile (projectileType2);
 		}
-
 	}
 
 	void ShootProjectile(GameObject projectileType)
 	{
+		Debug.Log ("shooting projectile");
 		if (projectileType == null) {
 			Debug.Log ("No projectile type given!");
 			return;
@@ -53,6 +57,7 @@ public class ProjectileShooter : MonoBehaviour {
 		}
 
 		mShootTimer = (1 / fireRate);
+		mAmmoControl.UseAmmo (requiredAmmo);
 	}
 
 	private bool CanShoot()
@@ -60,8 +65,11 @@ public class ProjectileShooter : MonoBehaviour {
 		if (mShootTimer > 0) {
 			return(false);
 		}
-
-		//AmmoController ac = GetComponent<AmmoController> ();
+			
+		if (mAmmoControl != null && !mAmmoControl.HasAmmo(requiredAmmo)) {
+			Debug.Log ("no ammo");
+			return(false);
+		}
 
 		return(true);
 	}
