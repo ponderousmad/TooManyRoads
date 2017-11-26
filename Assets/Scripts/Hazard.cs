@@ -24,6 +24,15 @@ public class Hazard : MonoBehaviour {
         }
     }
 
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        DamageController dc = collision.gameObject.GetComponent<DamageController>();
+        if (dc != null)
+        {
+            dc.Damage(damageAmount);
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
 	{
 		DamageController dc = collision.gameObject.GetComponent<DamageController>();
