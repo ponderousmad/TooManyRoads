@@ -6,21 +6,28 @@ public class Player : MonoBehaviour {
 	public bool useOneStickMode;
     public bool useLastMove;
 
+	public Texture2D fallbackTexture;
+
 	private PlayerInput mInput;
     private int mPlayerID = 0;
 	private PlayerSettings settings;
+	private bool wentToChooseLevel;
 
     [ContextMenu ("ExportInputDefintions")]
     public void ExportInputDefinitions()
     {
 		System.IO.File.WriteAllText(
-			@"/Users/agnomen/Documents/workspace/Inputs.txt",
+			@"/Users/agnomen/Documents/workspace/git/TooManyRoads/ProjectSettings/InputManager.asset",
 			PlayerInput.AllDefinitions()
 		);
     }
 
     public void SetID(int id)
     {
+		if (GameObject.FindGameObjectWithTag("Fallback")) {
+			wentToChooseLevel = true;
+		}
+
         Debug.Log("Setting player ID to: " + mPlayerID.ToString());
         mPlayerID = id;
 		mInput = new PlayerInput(mPlayerID + 1, useOneStickMode, useLastMove);
@@ -28,15 +35,15 @@ public class Player : MonoBehaviour {
         PhysCharacterController controller = GetComponent<PhysCharacterController>();
         controller.SetPlayerInput(mInput);
 
+		foreach(var shooter in GetComponentsInChildren<ProjectileShooter>())
+		{
+			shooter.SetInput(mInput);
+		}
+
 		string playerConfig = PlayerPrefs.GetString ("Player" + mPlayerID, "");
 		if (playerConfig.CompareTo("") != 0) {
 			settings = JsonUtility.FromJson<PlayerSettings> (playerConfig);
 			TryUseSettings ();
-		}
-
-		foreach(var shooter in GetComponentsInChildren<ProjectileShooter>())
-		{
-			shooter.SetInput(mInput);
 		}
     }
 	
@@ -62,10 +69,12 @@ public class Player : MonoBehaviour {
 				if (renderer) {
 					renderer.material.SetColor ("_Color", settings.tint);
 					renderer.material.SetColor ("_Accent", settings.stripe);
-                    if(settings.pattern)
-                    {
-					    renderer.material.SetTexture ("_MainTex", settings.pattern.texture);
-                    }
+
+					if (wentToChooseLevel && settings.pattern != null && settings.pattern.texture != null) {
+						renderer.material.SetTexture ("_MainTex", settings.pattern.texture);
+					} else {
+						renderer.material.SetTexture ("_MainTex", fallbackTexture);
+					}
 				}
 			}
 		}

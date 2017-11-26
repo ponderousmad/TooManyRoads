@@ -267,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useOneStickMode: 1
   useLastMove: 1
+  fallbackTexture: {fileID: 2800000, guid: d424ff27e5b47e444887792f6add6206, type: 3}
 --- !u!114 &114738171236740842
 MonoBehaviour:
   m_ObjectHideFlags: 1
