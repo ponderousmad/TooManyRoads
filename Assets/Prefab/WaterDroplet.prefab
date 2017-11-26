@@ -109,6 +109,7 @@ MonoBehaviour:
   initialScaleLerp: 1
   restoreRate: 0
   restoreDelay: 1
+  scalingAffectsMass: 1
 --- !u!212 &212645051371768702
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -142,7 +143,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.72312933, g: 0.9191176, b: 0.9191176, a: 1}
   m_FlipX: 0
