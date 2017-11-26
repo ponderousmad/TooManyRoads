@@ -31,7 +31,7 @@ public class GameGod : MonoBehaviour {
 	private bool useOnePlayerHack = false;
 	private float timeToNextScene = -1.0f;
 	private bool firstRun = true;
-	private bool firstWin = true;
+
 
 	// Use this for initialization
 	void Start () {
@@ -51,12 +51,7 @@ public class GameGod : MonoBehaviour {
 		if (timeToNextScene > 0.0f) {
 			timeToNextScene -= Time.deltaTime;
 			if (timeToNextScene <= 0.0f) {
-				if (firstWin) {
-					SceneManager.LoadScene (tutorialScene);
-					firstWin = false;
-				} else {
-					SceneManager.LoadScene (gameScene);
-				}
+				SceneManager.LoadScene (gameScene);
 			}
 		}
 	}
