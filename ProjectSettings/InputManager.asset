@@ -399,7 +399,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -415,7 +415,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -431,7 +431,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -447,7 +447,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -459,32 +459,32 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton:
-    positiveButton: joystick 1 button 7
+    positiveButton:
     altNegativeButton:
     altPositiveButton:
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 1
+    gravity: 0
+    dead: 0.05
+    sensitivity: 1
+    snap: 0
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 9
     joyNum: 1
   - serializedVersion: 3
     m_Name: Debigulate_P1_WIN
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton:
-    positiveButton: joystick 1 button 6
+    positiveButton:
     altNegativeButton:
     altPositiveButton:
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 1
+    gravity: 0
+    dead: 0.05
+    sensitivity: 1
+    snap: 0
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 8
     joyNum: 1
   - serializedVersion: 3
     m_Name: Press_P1_WIN
@@ -559,7 +559,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -575,7 +575,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -591,7 +591,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -607,7 +607,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -619,32 +619,32 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton:
-    positiveButton: joystick 2 button 7
+    positiveButton:
     altNegativeButton:
     altPositiveButton:
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 1
+    gravity: 0
+    dead: 0.05
+    sensitivity: 1
+    snap: 0
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 9
     joyNum: 2
   - serializedVersion: 3
     m_Name: Debigulate_P2_WIN
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton:
-    positiveButton: joystick 2 button 6
+    positiveButton:
     altNegativeButton:
     altPositiveButton:
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 1
+    gravity: 0
+    dead: 0.05
+    sensitivity: 1
+    snap: 0
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 8
     joyNum: 2
   - serializedVersion: 3
     m_Name: Press_P2_WIN
@@ -719,7 +719,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -735,7 +735,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -751,7 +751,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -767,7 +767,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -779,32 +779,32 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton:
-    positiveButton: joystick 3 button 7
+    positiveButton:
     altNegativeButton:
     altPositiveButton:
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 1
+    gravity: 0
+    dead: 0.05
+    sensitivity: 1
+    snap: 0
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 9
     joyNum: 3
   - serializedVersion: 3
     m_Name: Debigulate_P3_WIN
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton:
-    positiveButton: joystick 3 button 6
+    positiveButton:
     altNegativeButton:
     altPositiveButton:
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 1
+    gravity: 0
+    dead: 0.05
+    sensitivity: 1
+    snap: 0
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 8
     joyNum: 3
   - serializedVersion: 3
     m_Name: Press_P3_WIN
@@ -879,7 +879,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -895,7 +895,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -911,7 +911,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -927,7 +927,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -939,32 +939,32 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton:
-    positiveButton: joystick 4 button 7
+    positiveButton:
     altNegativeButton:
     altPositiveButton:
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 1
+    gravity: 0
+    dead: 0.05
+    sensitivity: 1
+    snap: 0
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 9
     joyNum: 4
   - serializedVersion: 3
     m_Name: Debigulate_P4_WIN
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton:
-    positiveButton: joystick 4 button 6
+    positiveButton:
     altNegativeButton:
     altPositiveButton:
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 1
+    gravity: 0
+    dead: 0.05
+    sensitivity: 1
+    snap: 0
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 8
     joyNum: 4
   - serializedVersion: 3
     m_Name: Press_P4_WIN
@@ -1135,7 +1135,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -1151,7 +1151,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -1167,7 +1167,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -1183,7 +1183,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -1295,7 +1295,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -1311,7 +1311,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -1327,7 +1327,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -1343,7 +1343,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -1455,7 +1455,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -1471,7 +1471,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -1487,7 +1487,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -1503,7 +1503,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -1615,7 +1615,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -1631,7 +1631,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1
@@ -1647,7 +1647,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 0
@@ -1663,7 +1663,7 @@ InputManager:
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: 1

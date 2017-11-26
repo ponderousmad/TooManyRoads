@@ -119,7 +119,7 @@ public class PlayerInput {
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.02
+    dead: 0.05
     sensitivity: 1
     snap: 0
     invert: {1}
@@ -211,10 +211,16 @@ public class PlayerInput {
 		yield return AnalogAxisInput(Axis.MoveY, player, platform, true);
 		yield return AnalogAxisInput(Axis.AimX, player, platform, false);
 		yield return AnalogAxisInput(Axis.AimY, player, platform, true);
-		//yield return AnalogAxisInput(Axis.Embiggen, player, platform, false);
-		//yield return AnalogAxisInput(Axis.Debigulate, player, platform, false);
-        yield return ButtonAxisInput(Button.Embiggen, player, platform);
-        yield return ButtonAxisInput(Button.Debigulate, player, platform);
+        if(platform == RuntimePlatform.WindowsPlayer)
+        {
+            yield return AnalogAxisInput(Axis.Embiggen, player, platform, false);
+            yield return AnalogAxisInput(Axis.Debigulate, player, platform, false);
+        }
+        else
+        {
+            yield return ButtonAxisInput(Button.Embiggen, player, platform);
+            yield return ButtonAxisInput(Button.Debigulate, player, platform);
+        }
         yield return ButtonInput(Button.Press, player, platform, "space");
         yield return ButtonInput(Button.Jump, player, platform, "space");
         yield return ButtonInput(Button.SelfEmbiggen, player, platform, "c");
