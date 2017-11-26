@@ -44,6 +44,8 @@ public class Droplet : MonoBehaviour {
 				e.SetScaleValue (nextSize);
 			}
 		}
+			
+		BroadcastMessage("Collision", collider.collider);
 
 		Destroy (this.gameObject);
 	}
