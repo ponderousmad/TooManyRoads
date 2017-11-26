@@ -42,7 +42,6 @@ public class FlyingCar : MovingPlatform {
     override protected void OnDrawGizmos()
     {
         base.OnDrawGizmos();
-        Vector3 delta = endPosition.position - startPosition.position;
 
         Gizmos.color = Color.green;
         Gizmos.DrawLine(startPosition.position, Vector3.Lerp(startPosition.position, endPosition.position, startPortalPosition));

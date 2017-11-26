@@ -9,6 +9,7 @@ TagManager:
   - Spawn2
   - Spawn3
   - Spawn4
+  - Visuals
   layers:
   - Default
   - TransparentFX

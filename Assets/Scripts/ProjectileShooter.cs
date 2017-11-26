@@ -79,6 +79,7 @@ public class ProjectileShooter : MonoBehaviour {
 		KinematicProjectile kinBehavior = projectile.GetComponent<KinematicProjectile> ();
 		if (kinBehavior != null) {
 			kinBehavior.SetVelocity (aim * projectileSpeed);
+			kinBehavior.SetInstigator (gameObject);
 		}
         SpendProjectile();
 	}

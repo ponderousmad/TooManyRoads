@@ -34,6 +34,7 @@ public class DamageController : MonoBehaviour {
 	void Die()
 	{
 		mDead = true;
-		Debug.Log ("I died!");
+		//Debug.Log ("I died!");
+        Destroy(this.gameObject);
 	}
 }
