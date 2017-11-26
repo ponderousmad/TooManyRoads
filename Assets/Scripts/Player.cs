@@ -86,7 +86,9 @@ public class Player : MonoBehaviour {
 		if (mGod == null) {
 			TryGetGod ();
 		}
-		mGod.OnPlayerDied (mPlayerID);
+		if (mGod != null) {
+			mGod.OnPlayerDied (mPlayerID);
+		}
 	}
 
 	public void TryGetGod() {
