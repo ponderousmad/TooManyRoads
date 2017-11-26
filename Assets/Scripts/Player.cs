@@ -23,13 +23,7 @@ public class Player : MonoBehaviour {
     {
         Debug.Log("Setting player ID to: " + mPlayerID.ToString());
         mPlayerID = id;
-<<<<<<< HEAD
-		mInput = new PlayerInput(mPlayerID, useOneStickMode, useLastMove);
-||||||| merged common ancestors
-		mInput = new PlayerInput(mPlayerID, mUseOneStickMode);
-=======
-		mInput = new PlayerInput(mPlayerID + 1, mUseOneStickMode);
->>>>>>> origin/master
+		mInput = new PlayerInput(mPlayerID + 1, useOneStickMode, useLastMove);
 
         PhysCharacterController controller = GetComponent<PhysCharacterController>();
         controller.SetPlayerInput(mInput);
