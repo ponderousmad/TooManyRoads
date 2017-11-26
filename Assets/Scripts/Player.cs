@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	public bool mUseOneStickMode;
+	public bool useOneStickMode;
+    public bool useLastMove;
 
 	private PlayerInput mInput;
     private int mPlayerID = 0;
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour {
     {
         Debug.Log("Setting player ID to: " + mPlayerID.ToString());
         mPlayerID = id;
-		mInput = new PlayerInput(mPlayerID, mUseOneStickMode);
+		mInput = new PlayerInput(mPlayerID, useOneStickMode, useLastMove);
 
         PhysCharacterController controller = GetComponent<PhysCharacterController>();
         controller.SetPlayerInput(mInput);
