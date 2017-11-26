@@ -83,6 +83,9 @@ public class Player : MonoBehaviour {
 	}
 
 	public void SendDeath(){
+		if (mGod == null) {
+			TryGetGod ();
+		}
 		mGod.OnPlayerDied (mPlayerID);
 	}
 
