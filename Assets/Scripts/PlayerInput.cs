@@ -291,5 +291,5 @@ public class PlayerInput {
     public bool MenuDown { get { return AnalogToDigital(-MoveY, menuThreshold, ref menuDown); } }
 
     public bool MenuLeft { get { return AnalogToDigital(-MoveX, menuThreshold, ref menuLeft); } }
-    public bool MenuRight { get { return AnalogToDigital(MoveY, menuThreshold, ref menuRight); } }
+    public bool MenuRight { get { return AnalogToDigital(MoveX, menuThreshold, ref menuRight); } }
 }

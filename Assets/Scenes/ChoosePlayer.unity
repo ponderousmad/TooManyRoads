@@ -345,6 +345,7 @@ MonoBehaviour:
   highlight: {fileID: 0}
   startSelected: 0
   isStripe: 0
+  customSprite: {fileID: 0}
 --- !u!114 &207395180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,7 +547,7 @@ Transform:
   m_GameObject: {fileID: 338307851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 30, z: -2}
-  m_LocalScale: {x: 30, y: 30, z: 1}
+  m_LocalScale: {x: 48, y: 48, z: 1}
   m_Children:
   - {fileID: 1744401936}
   m_Father: {fileID: 1916321664}
@@ -567,7 +568,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1e3ee686e6a2ba749b6022c4c5adb9f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -587,7 +588,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bf7d2457ab2e8644fa7427bbab45bf5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6f4a1201aae5a843968b1185e8ea9a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -632,6 +633,7 @@ MonoBehaviour:
   highlight: {fileID: 1744401934}
   startSelected: 1
   isStripe: 0
+  customSprite: {fileID: 0}
 --- !u!1 &424527551
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +688,7 @@ MonoBehaviour:
   highlight: {fileID: 0}
   startSelected: 1
   isStripe: 0
+  customSprite: {fileID: 0}
 --- !u!114 &424527553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,6 +831,7 @@ MonoBehaviour:
   highlight: {fileID: 0}
   startSelected: 0
   isStripe: 0
+  customSprite: {fileID: 0}
 --- !u!114 &586416097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,16 +1113,17 @@ MonoBehaviour:
   nextCustomizer: {fileID: 338307855}
   prevCustomizer: {fileID: 1624739793}
   colors:
-  - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 0, g: 1, b: 0, a: 0}
-  - {r: 0, g: 0, b: 1, a: 0}
-  - {r: 1, g: 1, b: 0, a: 0}
-  - {r: 1, g: 0, b: 1, a: 0}
-  - {r: 0, g: 1, b: 1, a: 0}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
   patterns: []
   highlight: {fileID: 1857583488}
   startSelected: 0
   isStripe: 1
+  customSprite: {fileID: 338307854}
 --- !u!212 &774265159
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1155,7 +1160,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 719da4f73c9d24876ac069db353d7196, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1387,6 +1392,7 @@ MonoBehaviour:
   highlight: {fileID: 0}
   startSelected: 0
   isStripe: 0
+  customSprite: {fileID: 0}
 --- !u!114 &1025671006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1738,6 +1744,7 @@ MonoBehaviour:
   highlight: {fileID: 0}
   startSelected: 0
   isStripe: 1
+  customSprite: {fileID: 0}
 --- !u!114 &1607998709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,16 +1922,17 @@ MonoBehaviour:
   nextCustomizer: {fileID: 774265157}
   prevCustomizer: {fileID: 338307855}
   colors:
-  - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 0, g: 1, b: 0, a: 0}
-  - {r: 0, g: 0, b: 1, a: 0}
-  - {r: 1, g: 1, b: 0, a: 0}
-  - {r: 1, g: 0, b: 1, a: 0}
-  - {r: 0, g: 1, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
   patterns: []
   highlight: {fileID: 725613558}
   startSelected: 0
   isStripe: 0
+  customSprite: {fileID: 338307854}
 --- !u!1 &1644212715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +1987,7 @@ MonoBehaviour:
   highlight: {fileID: 0}
   startSelected: 1
   isStripe: 0
+  customSprite: {fileID: 0}
 --- !u!114 &1644212717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,6 +2298,7 @@ MonoBehaviour:
   highlight: {fileID: 0}
   startSelected: 1
   isStripe: 0
+  customSprite: {fileID: 0}
 --- !u!114 &1725330571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2453,7 +2463,7 @@ Transform:
   m_GameObject: {fileID: 1744401934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 338307852}
   m_RootOrder: 0
@@ -2592,6 +2602,7 @@ MonoBehaviour:
   highlight: {fileID: 0}
   startSelected: 0
   isStripe: 1
+  customSprite: {fileID: 0}
 --- !u!114 &1832459653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3078,6 +3089,7 @@ MonoBehaviour:
   highlight: {fileID: 0}
   startSelected: 0
   isStripe: 1
+  customSprite: {fileID: 0}
 --- !u!114 &2052774890
 MonoBehaviour:
   m_ObjectHideFlags: 0
