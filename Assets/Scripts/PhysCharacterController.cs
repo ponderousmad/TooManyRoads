@@ -36,6 +36,8 @@ public class PhysCharacterController : MonoBehaviour {
     private Vector3 lastFollowerTransform;
 	private AudioSource mAudioSource;
 
+    public Animator playerAnimator;
+
     void StopMoving()
     {
         if(rigidBody != null)
@@ -96,8 +98,10 @@ public class PhysCharacterController : MonoBehaviour {
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpImpulse);
 //				rigidBody.AddForce (new Vector2 (0.0f, jumpImpulse), ForceMode2D.Impulse);
 			}
+            playerAnimator.SetBool("Jump", true);
 			++jumpCount;
             isOnGround = false;
+            playerAnimator.SetBool("OnGround", false);
 			if (jumpSound != null) {
 				mAudioSource.PlayOneShot (jumpSound);
 			}
@@ -143,6 +147,38 @@ public class PhysCharacterController : MonoBehaviour {
 
         debugVelocity = moveForce;
         rigidBody.velocity = moveForce;
+
+        Vector2 aim = playerInput.Aim(true);
+        if(aim.y > 0.0f)
+        {
+            if(aim.x == 0.0f)
+            {
+                playerAnimator.SetLayerWeight(2, 1.0f);
+                playerAnimator.SetLayerWeight(1, 0.0f);
+            } else
+            {
+                playerAnimator.SetLayerWeight(2, 0.5f);
+                playerAnimator.SetLayerWeight(1, 0.5f);
+            }
+            playerAnimator.SetInteger("Vertical", 1);
+        } else if(aim.y < 0.0f)
+        {
+            if(aim.x < 0.0f)
+            {
+                playerAnimator.SetLayerWeight(2, 1.0f);
+                playerAnimator.SetLayerWeight(1, 0.0f);
+            } else
+            {
+                playerAnimator.SetLayerWeight(2, 0.5f);
+                playerAnimator.SetLayerWeight(1, 0.5f);
+            }
+            playerAnimator.SetInteger("Vertical", -1);
+        } else
+        {
+            playerAnimator.SetLayerWeight(2, 0.0f);
+            playerAnimator.SetLayerWeight(1, 1.0f);
+            playerAnimator.SetInteger("Vertical", 0);
+        }
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -191,6 +227,7 @@ public class PhysCharacterController : MonoBehaviour {
 
 	void OnLanded()
 	{
+        playerAnimator.SetBool("OnGround", true);
         isOnGround = true;
 		jumpCount = 0;
 	}
