@@ -1601,8 +1601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c97db7959e64e359c5ee896028ffb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 8
-  rechargeRate: 1
+  maxAmmo: 15
+  rechargeRate: 2
   startFull: 1
 --- !u!114 &114555847189861928
 MonoBehaviour:
