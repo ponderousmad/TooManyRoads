@@ -33,6 +33,15 @@ public class PhysCharacterController : MonoBehaviour {
     private Vector3 lastFollowerTransform;
 	private AudioSource mAudioSource;
 
+    void StopMoving()
+    {
+        if(rigidBody != null)
+        {
+            rigidBody.isKinematic = true;
+        }
+        enabled = false;
+    }
+
 	// Use this for initialization
 	void Start () {
         isOnGround = true;
@@ -40,6 +49,8 @@ public class PhysCharacterController : MonoBehaviour {
 		jumpCount = 0;
 		rigidBody = GetComponent<Rigidbody2D> ();
 		lastDir = 0.0f;
+
+        GameRules.OnGameOver += StopMoving;
 	}
 
     public void SetPlayerInput(PlayerInput input)

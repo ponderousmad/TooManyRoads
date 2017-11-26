@@ -13,6 +13,11 @@ public class PlayerSpawner : MonoBehaviour {
 
     public PlayerDisplay display;
 
+    public GameRules gameRules;
+
+    public int numSpawns = 3;
+
+
 	// Use this for initialization
 	void Awake () {
 		string playerConfig = PlayerPrefs.GetString ("Player" + playerId, "");
@@ -30,13 +35,22 @@ public class PlayerSpawner : MonoBehaviour {
 			Destroy (this.gameObject);
 			return;
 		}
+
+        gameRules.OnPlayerSpawned(this);
 	}
 
     void Update()
     {
         if(player == null)
         {
-            SpawnPlayer();
+            if(numSpawns == 0)
+            {
+                gameRules.OnPlayerEliminated(this);
+                enabled = false;
+            } else
+            {
+                SpawnPlayer();
+            }
         }
     }
 
@@ -76,6 +90,8 @@ public class PlayerSpawner : MonoBehaviour {
                     display.ammoController = ammo;
                 }
             }
+
+            --numSpawns;
         }
         else
         {

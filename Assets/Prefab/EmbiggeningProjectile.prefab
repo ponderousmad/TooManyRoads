@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a03cc4c8ccc454ebeaa11e2e88529e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  embiggenAmount: 0.1
+  embiggenAmount: 0.2
 --- !u!114 &114714412062953968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c401814a0f6df46ad71afa2473c020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityEnabled: 0
 --- !u!212 &212222142407605978
 SpriteRenderer:
   m_ObjectHideFlags: 1

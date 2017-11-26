@@ -59,7 +59,10 @@ MonoBehaviour:
   snapAim: 1
   projectileSpeed: 10
   fireRate: 1
-  requiredAmmo: 1
+  requiredAmmo: 2
+  selfEmbiggen: 0.1
+  shootEmbiggenerSound: {fileID: 0}
+  shootDebigulatorSound: {fileID: 0}
 --- !u!114 &114705308832290360
 MonoBehaviour:
   m_ObjectHideFlags: 1

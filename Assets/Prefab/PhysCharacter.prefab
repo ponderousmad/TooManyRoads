@@ -396,7 +396,7 @@ MonoBehaviour:
   snapAim: 1
   projectileSpeed: 20
   fireRate: 5
-  requiredAmmo: 1
+  requiredAmmo: 2
   selfEmbiggen: 0.1
   shootEmbiggenerSound: {fileID: 0}
   shootDebigulatorSound: {fileID: 0}
