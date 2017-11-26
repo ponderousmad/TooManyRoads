@@ -38,7 +38,8 @@ public class DamageController : MonoBehaviour {
 		mCurrentHealth -= damageAmount;
 		if (mCurrentHealth <= 0) {
 			if (deathSound != null) {
-				mAudioSource.PlayOneShot (deathSound);
+                AudioSource.PlayClipAtPoint(deathSound, transform.position, 1.0f);
+                Debug.Log("Play death");
 			}
 			Die ();
 		} else {
