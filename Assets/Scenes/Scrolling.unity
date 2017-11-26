@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 1636856738}
-  firstScene: {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714, type: 2}
-  secondScene: {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714,
+  firstScene: {fileID: 1154686165225608, guid: e130cdcd1e3069145ac4948ef2a73dad, type: 2}
+  secondScene: {fileID: 1670286024904160, guid: 67bfe62d9d0272a42b6e6c6b34962cd0,
     type: 2}
   gameScenes:
   - {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714, type: 2}
