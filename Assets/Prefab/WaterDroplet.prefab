@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58246779313221612}
   - component: {fileID: 114669317043691230}
   - component: {fileID: 114524487013537956}
+  - component: {fileID: 114218442451128508}
   m_Layer: 4
   m_Name: WaterDroplet
   m_TagString: Untagged
@@ -79,6 +80,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &114218442451128508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1909105335279036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe36e3044f1744cf9ef3eb64a95b61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
 --- !u!114 &114524487013537956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4295cda0940a64286a99fdaa9ce49c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSplashSize: 0.2
+  minSplashSize: 0.3
   splashForceMultiplier: {x: 30, y: 10}
 --- !u!114 &114669317043691230
 MonoBehaviour:
