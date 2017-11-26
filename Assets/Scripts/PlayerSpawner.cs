@@ -78,6 +78,7 @@ public class PlayerSpawner : MonoBehaviour {
             Debug.Log(player);
 
             player.GetComponent<Player>().SetID(playerId);
+
 			Destroy(bestSpawn);
 
             if(display)
