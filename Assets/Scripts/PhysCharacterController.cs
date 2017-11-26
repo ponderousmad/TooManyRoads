@@ -147,6 +147,38 @@ public class PhysCharacterController : MonoBehaviour {
 
         debugVelocity = moveForce;
         rigidBody.velocity = moveForce;
+
+        Vector2 aim = playerInput.Aim(true);
+        if(aim.y > 0.0f)
+        {
+            if(aim.x == 0.0f)
+            {
+                playerAnimator.SetLayerWeight(2, 1.0f);
+                playerAnimator.SetLayerWeight(1, 0.0f);
+            } else
+            {
+                playerAnimator.SetLayerWeight(2, 0.5f);
+                playerAnimator.SetLayerWeight(1, 0.5f);
+            }
+            playerAnimator.SetInteger("Vertical", 1);
+        } else if(aim.y < 0.0f)
+        {
+            if(aim.x < 0.0f)
+            {
+                playerAnimator.SetLayerWeight(2, 1.0f);
+                playerAnimator.SetLayerWeight(1, 0.0f);
+            } else
+            {
+                playerAnimator.SetLayerWeight(2, 0.5f);
+                playerAnimator.SetLayerWeight(1, 0.5f);
+            }
+            playerAnimator.SetInteger("Vertical", -1);
+        } else
+        {
+            playerAnimator.SetLayerWeight(2, 0.0f);
+            playerAnimator.SetLayerWeight(1, 1.0f);
+            playerAnimator.SetInteger("Vertical", 0);
+        }
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
