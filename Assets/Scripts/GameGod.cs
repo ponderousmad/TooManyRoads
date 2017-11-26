@@ -136,12 +136,16 @@ public class GameGod : MonoBehaviour {
 					}
 				}
 
-				trackers [aliveId].score++;
-				if (trackers [aliveId].score == MAX_SCORE) {
-					winnerId = aliveId;
-					SceneManager.LoadSceneAsync (noblelestSpiritScene);
-				} else {
-					timeToNextScene = nextGameTime;
+				for (int i = 0; i < trackers.Length; ++i) {
+					if (trackers [i].playerId == aliveId) {
+						trackers [i].score++;
+						if (trackers [i].score == MAX_SCORE) {
+							winnerId = aliveId;
+							SceneManager.LoadSceneAsync (noblelestSpiritScene);
+						} else {
+							timeToNextScene = nextGameTime;
+						}
+					}
 				}
 			}
 		}
