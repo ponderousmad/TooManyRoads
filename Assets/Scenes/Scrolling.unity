@@ -244,6 +244,7 @@ MonoBehaviour:
   - {fileID: 1567495289153052, guid: b776482a05aea17419956bf1de2be56a, type: 2}
   - {fileID: 1979166079897838, guid: ca3c68f3b5eb6134ba4cdbdc7d822f4b, type: 2}
   - {fileID: 1252432178257128, guid: 4fbc8f41670ad7644b8d3d7ab56a878d, type: 2}
+  - {fileID: 1719467133859182, guid: aa175207cf4a22d49b59474a2ca13774, type: 2}
   scrollValue: 0
   scrollSpeed: 0
   timeUntilIncrease: 5
