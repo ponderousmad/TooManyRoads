@@ -117,6 +117,8 @@ public class PhysCharacterController : MonoBehaviour {
 		Vector2 moveForce = rigidBody.velocity;
 		float forward = playerInput.MoveX * movementSpeed;
 
+        playerAnimator.SetBool("Moving", Mathf.Abs(forward) > 0.1f);
+
         smoothVelocity.smoothTime = isOnGround ? 0.1f : 0.25f;
         smoothVelocity.targetValue = forward;
         smoothVelocity.currentValue = moveForce.x;
@@ -152,11 +154,11 @@ public class PhysCharacterController : MonoBehaviour {
             if(aim.x == 0.0f)
             {
                 playerAnimator.SetLayerWeight(2, 1.0f);
-                playerAnimator.SetLayerWeight(1, 0.0f);
+//                playerAnimator.SetLayerWeight(1, 0.0f);
             } else
             {
-                playerAnimator.SetLayerWeight(2, 0.6f);
-                playerAnimator.SetLayerWeight(1, 0.3f);
+                playerAnimator.SetLayerWeight(2, 0.5f);
+//                playerAnimator.SetLayerWeight(1, 0.3f);
             }
             playerAnimator.SetInteger("Vertical", 1);
         } else if(aim.y < 0.0f)
@@ -164,17 +166,17 @@ public class PhysCharacterController : MonoBehaviour {
             if(aim.x == 0.0f)
             {
                 playerAnimator.SetLayerWeight(2, 1.0f);
-                playerAnimator.SetLayerWeight(1, 0.0f);
+//                playerAnimator.SetLayerWeight(1, 0.0f);
             } else
             {
                 playerAnimator.SetLayerWeight(2, 0.5f);
-                playerAnimator.SetLayerWeight(1, 0.5f);
+//                playerAnimator.SetLayerWeight(1, 0.5f);
             }
             playerAnimator.SetInteger("Vertical", -1);
         } else
         {
             playerAnimator.SetLayerWeight(2, 0.0f);
-            playerAnimator.SetLayerWeight(1, 1.0f);
+//            playerAnimator.SetLayerWeight(1, 1.0f);
             playerAnimator.SetInteger("Vertical", 0);
         }
 	}
