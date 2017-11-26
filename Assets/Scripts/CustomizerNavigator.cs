@@ -13,6 +13,7 @@ public class CustomizerNavigator : MonoBehaviour {
 	public GameObject highlight;
 	public bool startSelected;
 	public bool isStripe;
+	public SpriteRenderer customSprite;
 
 	private SpriteRenderer spriteRenderer;
 	private PlayerInfo playerRef;
@@ -53,18 +54,16 @@ public class CustomizerNavigator : MonoBehaviour {
 				moved = false;
 			}
 
-			if (!movedUp) {
-				if (playerRef.input.MenuUp) {
-					if (!movedUp) {
-						SelectNextCustomizer (-1);
-					}
-				} else if (playerRef.input.MenuDown) {
-					if (!movedUp) {
-						SelectNextCustomizer (1);
-					}
-				} else {
-					movedUp = false;
+			if (playerRef.input.MenuUp) {
+				if (!movedUp) {
+					SelectNextCustomizer (-1);
 				}
+			} else if (playerRef.input.MenuDown) {
+				if (!movedUp) {
+					SelectNextCustomizer (1);
+				}
+			} else {
+				movedUp = false;
 			}
 		}
 	}
@@ -123,12 +122,14 @@ public class CustomizerNavigator : MonoBehaviour {
 		spriteRenderer.color = colors [chosenOption];
 		if (isStripe) {
 			playerRef.settings.stripe = colors [chosenOption];
+			customSprite.material.SetColor ("_Accent", spriteRenderer.color);
 		} else {
 			playerRef.settings.tint = colors [chosenOption];
+			customSprite.material.SetColor ("_Color", spriteRenderer.color);
 		}
 	}
 
-	public void SelectNextCustomizer (int direction) {
+	void SelectNextCustomizer (int direction) {
 		movedUp = true;
 		if (direction > 0) {
 			nextCustomizer.Highlight ();
