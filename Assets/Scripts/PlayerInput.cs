@@ -18,8 +18,13 @@ public class PlayerInput {
 	private float aimAxisDeadzone = 0.5f;
 	private float jumpThreshold = 0.5f;
     private float fireThreshold = 0.5f;
+    private float menuThreshold = 0.5f;
 
     private bool jumpActive = false;
+    private bool menuUp = false;
+    private bool menuDown = false;
+    private bool menuLeft = false;
+    private bool menuRight = false;
 
 	enum Axis
 	{
@@ -263,12 +268,17 @@ public class PlayerInput {
 	public float MoveX { get { return GetAxis(moveAxisX); } }
 	public float MoveY { get { return GetAxis(moveAxisY); } }
 
+    private static AnalogToDigital(float input, float threshold, ref value)
+    {
+        bool prevValue = value;
+        value = input > threshold;
+        return value && !prevValue;
+    }
+
 	public bool Jump {
         get
         {
-            bool wasJump = jumpActive;
-            jumpActive = MoveY > 0.5f;
-            return Input.GetButtonDown(jumpButton) || (jumpActive && !wasJump);
+            return AnalogToDigital(MoveY, jumpThreshold, ref jumpActive) || Input.GetButtonDown(jumpButton);
         }
     }
 
@@ -277,9 +287,9 @@ public class PlayerInput {
 
     public bool MenuPress { get { return Input.GetButtonDown(pressButton); } }
 
-    public bool MenuUp { get { return MoveY < 0; } }
-    public bool MenuDown { get { return MoveY > 0; } }
+    public bool MenuUp { get { return AnalogToDigital(MoveY, menuThreshold, ref menuUp); } }
+    public bool MenuDown { get { return AnalogToDigital(-MoveY, menuThreshold, ref menuDown); } }
 
-    public bool MenuLeft { get { return MoveX < 0; } }
-    public bool MenuRight { get { return MoveX > 0; } }
+    public bool MenuLeft { get { return AnalogToDigital(-MoveX, menuThreshold, ref menuLeft); } }
+    public bool MenuRight { get { return AnalogToDigital(MoveY, menuThreshold, ref menuRight); } }
 }
