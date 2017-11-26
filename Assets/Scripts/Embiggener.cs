@@ -75,11 +75,13 @@ public class Embiggener : MonoBehaviour {
 
 	}
 
-    public void Embiggen(float amount)
+    public bool Embiggen(float amount)
     {
+        float prevTarget = mTargetScaleValue;
 		mTargetScaleValue = Mathf.Clamp(mTargetScaleValue+amount*lerpScaling, 0.0f, 1.0f);
         mScaleRate = scaleRate;
         mRestoreTimer = restoreDelay;
+        return(Mathf.Abs(prevTarget - mTargetScaleValue) > 0.01f);
     }
 
 	public void SetScaleValue(float value)
