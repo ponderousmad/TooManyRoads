@@ -17,7 +17,7 @@ public class CustomizerNavigator : MonoBehaviour {
 
 	private SpriteRenderer spriteRenderer;
 	private PlayerInfo playerRef;
-	private int chosenOption = 0;
+	public int chosenOption = 0;
 	private bool moved = false;
 	private bool movedUp = false;
 	private bool selected = false;

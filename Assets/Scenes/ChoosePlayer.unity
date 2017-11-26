@@ -158,6 +158,7 @@ MonoBehaviour:
   startSelected: 0
   isStripe: 0
   customSprite: {fileID: 384130965}
+  chosenOption: 1
 --- !u!212 &38210595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -244,7 +245,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 82894579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -120, y: 0, z: 0}
+  m_LocalPosition: {x: -119.87552, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1485147082}
@@ -445,6 +446,7 @@ MonoBehaviour:
   startSelected: 1
   isStripe: 0
   customSprite: {fileID: 0}
+  chosenOption: 0
 --- !u!1 &354828920
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +546,7 @@ MonoBehaviour:
   startSelected: 1
   isStripe: 0
   customSprite: {fileID: 0}
+  chosenOption: 2
 --- !u!4 &354828923
 Transform:
   m_ObjectHideFlags: 0
@@ -697,6 +700,7 @@ MonoBehaviour:
   startSelected: 1
   isStripe: 0
   customSprite: {fileID: 0}
+  chosenOption: 1
 --- !u!4 &384130967
 Transform:
   m_ObjectHideFlags: 0
@@ -897,6 +901,7 @@ MonoBehaviour:
   startSelected: 0
   isStripe: 1
   customSprite: {fileID: 354828921}
+  chosenOption: 5
 --- !u!212 &496003771
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1123,6 +1128,7 @@ MonoBehaviour:
   startSelected: 0
   isStripe: 0
   customSprite: {fileID: 1563133827}
+  chosenOption: 3
 --- !u!212 &681083759
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1282,7 +1288,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 736745905}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40, y: 0, z: 0}
+  m_LocalPosition: {x: -39.87552, y: 0, z: 0}
   m_LocalScale: {x: 1.00005, y: 1.00005, z: 1.00005}
   m_Children:
   - {fileID: 2054607499}
@@ -1391,6 +1397,7 @@ MonoBehaviour:
   startSelected: 0
   isStripe: 1
   customSprite: {fileID: 338307854}
+  chosenOption: 0
 --- !u!212 &774265159
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1745,7 +1752,7 @@ RectTransform:
   m_GameObject: {fileID: 924229352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.06666667, y: 0.06666667, z: 0.06666667}
+  m_LocalScale: {x: 0.06673589, y: 0.06673589, z: 0.06673589}
   m_Children:
   - {fileID: 82894580}
   - {fileID: 736745906}
@@ -1878,6 +1885,7 @@ MonoBehaviour:
   startSelected: 0
   isStripe: 0
   customSprite: {fileID: 354828921}
+  chosenOption: 4
 --- !u!212 &1179638744
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2190,7 +2198,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1353360449}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 120, y: 0, z: 0}
+  m_LocalPosition: {x: 120.12448, y: 0, z: 0}
   m_LocalScale: {x: 1.00005, y: 1.00005, z: 1.00005}
   m_Children:
   - {fileID: 1372027879}
@@ -2639,6 +2647,7 @@ MonoBehaviour:
   startSelected: 1
   isStripe: 0
   customSprite: {fileID: 0}
+  chosenOption: 3
 --- !u!4 &1563133829
 Transform:
   m_ObjectHideFlags: 0
@@ -2760,6 +2769,7 @@ MonoBehaviour:
   startSelected: 0
   isStripe: 0
   customSprite: {fileID: 338307854}
+  chosenOption: 0
 --- !u!1 &1665447448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,6 +2991,7 @@ MonoBehaviour:
   startSelected: 0
   isStripe: 1
   customSprite: {fileID: 1563133827}
+  chosenOption: 5
 --- !u!212 &1724108358
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3125,7 +3136,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1805211960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40, y: 0, z: 0}
+  m_LocalPosition: {x: 40.12448, y: 0, z: 0}
   m_LocalScale: {x: 1.00005, y: 1.00005, z: 1.00005}
   m_Children:
   - {fileID: 2131099880}
@@ -3380,6 +3391,7 @@ MonoBehaviour:
   startSelected: 0
   isStripe: 1
   customSprite: {fileID: 384130965}
+  chosenOption: 3
 --- !u!212 &1876254899
 SpriteRenderer:
   m_ObjectHideFlags: 0
