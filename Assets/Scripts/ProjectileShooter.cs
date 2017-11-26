@@ -13,10 +13,14 @@ public class ProjectileShooter : MonoBehaviour {
 	public float requiredAmmo = 1.0f;
     public float selfEmbiggen = 0.1f;
 
+	public AudioClip shootEmbiggenerSound;
+	public AudioClip shootDebigulatorSound;
+
 	private float mShootTimer;
 
 	private AmmoController mAmmoControl;
     private PlayerInput mPlayerInput;
+	private AudioSource mAudioSource;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +32,10 @@ public class ProjectileShooter : MonoBehaviour {
     {
         mPlayerInput = input;
     }
+
+	public void SetAudioSource (AudioSource audioSource) {
+		mAudioSource = audioSource;
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -56,14 +64,14 @@ public class ProjectileShooter : MonoBehaviour {
             }
         }
         if (mPlayerInput.FireEmbiggen) {
-            ShootProjectile (projectileType1);
+            ShootProjectile (projectileType1, true);
         }
         if (mPlayerInput.FireDebigulate) {
-            ShootProjectile (projectileType2);
+            ShootProjectile (projectileType2, false);
         }
 	}
 
-	void ShootProjectile(GameObject projectileType)
+	void ShootProjectile(GameObject projectileType, bool isEmbiggener)
 	{
 		Debug.Log ("shooting projectile");
 		if (projectileType == null) {
@@ -81,6 +89,12 @@ public class ProjectileShooter : MonoBehaviour {
 			kinBehavior.SetVelocity (aim * projectileSpeed);
 			kinBehavior.SetInstigator (gameObject);
 		}
+
+		AudioClip sound = isEmbiggener ? shootEmbiggenerSound : shootDebigulatorSound;
+		if (sound != null) {
+			mAudioSource.PlayOneShot (sound);
+		}
+
         SpendProjectile();
 	}
 

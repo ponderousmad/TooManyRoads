@@ -17,6 +17,7 @@ public class PhysCharacterController : MonoBehaviour {
 	public float debugLastDir;
 	public float debugRightDot;
 	public float debugRightDotCheck;
+	public AudioClip jumpSound;
 
     private bool isOnGround;
 	private bool isClinging;
@@ -30,6 +31,7 @@ public class PhysCharacterController : MonoBehaviour {
 
     public Transform attachFollower;
     private Vector3 lastFollowerTransform;
+	private AudioSource mAudioSource;
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +46,11 @@ public class PhysCharacterController : MonoBehaviour {
     {
         playerInput = input;
     }
+
+	public void SetAudioSource(AudioSource audioSource)
+	{
+		mAudioSource = audioSource;
+	}
 
     private void UpdateFollower()
     {
@@ -73,6 +80,9 @@ public class PhysCharacterController : MonoBehaviour {
 			}
 			++jumpCount;
             isOnGround = false;
+			if (jumpSound != null) {
+				mAudioSource.PlayOneShot (jumpSound);
+			}
 		}
 
         UpdateFollower();

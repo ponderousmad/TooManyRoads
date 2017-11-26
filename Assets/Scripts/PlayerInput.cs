@@ -119,7 +119,7 @@ public class PlayerInput {
     altNegativeButton:
     altPositiveButton:
     gravity: 0
-    dead: 0.05
+    dead: 0.2
     sensitivity: 1
     snap: 0
     invert: {1}
