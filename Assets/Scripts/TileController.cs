@@ -47,14 +47,27 @@ public class TileController : MonoBehaviour {
             return;
         }
 
-        if(firstScene == null || secondScene == null || gameScenes.Length == 0)
+        if(gameScenes.Length == 0)
         {
             gameObject.SetActive(false);
             return;
         }
 
-        CreateNewScene(firstScene);
-        CreateNewScene(secondScene);
+        if(firstScene)
+        {
+            CreateNewScene(firstScene);
+        } else
+        {
+            CreateNewScene(gameScenes[Random.Range(0, gameScenes.Length)]);
+        }
+
+        if(secondScene)
+        {
+            CreateNewScene(secondScene);
+        } else
+        {
+            CreateNewScene(gameScenes[Random.Range(0, gameScenes.Length)]);
+        }
 	}
 	
 	// Update is called once per frame
