@@ -22,9 +22,12 @@ public class PlayerDisplay : MonoBehaviour {
         }
 	}
 
-    public void RemoveLife(int index)
+    public void SetLives(int count)
     {
-        lives[index].SetActive(false);
+        for(int i = count; i < lives.Length; ++i)
+        {
+            lives[i].SetActive(false);
+        }
     }
 
     public void SetPowerLevel(float level)

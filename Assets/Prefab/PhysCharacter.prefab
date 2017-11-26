@@ -1421,7 +1421,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1.2
+  m_GravityScale: 2.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1585,6 +1585,7 @@ MonoBehaviour:
   maxScale: {x: 4, y: 4, z: 1}
   scaleRate: 0.25
   initialScaleLerp: 0.2
+  lerpScaling: 1
   restoreRate: 0.1
   restoreDelay: 1
   scalingAffectsMass: 1
@@ -1614,12 +1615,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  jumpImpulse: 6.5
+  jumpImpulse: 10
   slope: 45
   wallSlope: 15
   maxJumps: 2
   slideConstantGravity: -2
-  wallJumpImpulse: {x: 5, y: 5}
+  wallJumpImpulse: {x: 6, y: 9}
+  wallClingPersistence: 0.25
   debugVelocity: {x: 0, y: 0}
   debugIsClinging: 0
   debugContactNormal: {x: 0, y: 0}
