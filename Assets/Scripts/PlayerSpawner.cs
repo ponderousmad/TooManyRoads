@@ -79,7 +79,7 @@ public class PlayerSpawner : MonoBehaviour {
 
             player.GetComponent<Player>().SetID(playerId);
 
-			Destroy(bestSpawn);
+			//Destroy(bestSpawn);
 
             if(display)
             {
