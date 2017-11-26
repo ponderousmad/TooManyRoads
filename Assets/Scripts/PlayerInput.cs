@@ -201,7 +201,7 @@ public class PlayerInput {
 		if(player==1)
         {
             yield return KeyboardAxisInput(Axis.MoveX, player, platform, "a", "d");
-            yield return KeyboardAxisInput(Axis.MoveY, player, platform, "s", "w", "", "space");
+            yield return KeyboardAxisInput(Axis.MoveY, player, platform, "s", "w");
             yield return KeyboardAxisInput(Axis.AimX, player, platform, "left", "right");
             yield return KeyboardAxisInput(Axis.AimY, player, platform, "down", "up");
             yield return KeyboardAxisInput(Axis.Embiggen, player, platform, "", "e");
