@@ -86,13 +86,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1999497998539654}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4351555798855154}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4351555798855154
 Transform:
   m_ObjectHideFlags: 1
@@ -148,7 +148,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1999497998539654}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: d3fc29e226b32c447b6e183ced619990, type: 3}
 --- !u!50 &50138557436176646
 Rigidbody2D:
   serializedVersion: 4
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c97db7959e64e359c5ee896028ffb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 5
+  maxAmmo: 8
   rechargeRate: 1
   startFull: 1
 --- !u!114 &114555847189861928
@@ -283,10 +283,10 @@ MonoBehaviour:
   projectileType2: {fileID: 1442003381833664, guid: 0616a85b20f394a08b8e6389a385e7f3,
     type: 2}
   snapAim: 1
-  projectileSpeed: 10
-  fireRate: 1
+  projectileSpeed: 20
+  fireRate: 5
   requiredAmmo: 1
-  selfEmbiggen: 0.01
+  selfEmbiggen: 0.1
 --- !u!212 &212506073260582994
 SpriteRenderer:
   m_ObjectHideFlags: 1
