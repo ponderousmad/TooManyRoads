@@ -222,6 +222,8 @@ MonoBehaviour:
   - {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714, type: 2}
   - {fileID: 1631834887562262, guid: b735c5dd5af742d4aa4bd7c0fb7b5b14, type: 2}
   - {fileID: 1567495289153052, guid: b776482a05aea17419956bf1de2be56a, type: 2}
+  - {fileID: 1979166079897838, guid: ca3c68f3b5eb6134ba4cdbdc7d822f4b, type: 2}
+  - {fileID: 1252432178257128, guid: 4fbc8f41670ad7644b8d3d7ab56a878d, type: 2}
   scrollValue: 0
   scrollSpeed: 0
   timeUntilIncrease: 5

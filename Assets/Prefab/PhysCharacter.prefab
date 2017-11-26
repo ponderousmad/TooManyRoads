@@ -1273,7 +1273,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1797854963973648}
-  m_LocalRotation: {x: 0.7071077, y: 0.00028154056, z: -0.70710576, w: 0.00028154135}
+  m_LocalRotation: {x: 0.7071078, y: 0.0002815406, z: -0.7071058, w: 0.00028154138}
   m_LocalPosition: {x: 0.008938074, y: 0.00010633748, z: 0.052021638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1317,7 +1317,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217513761714260}
-  m_LocalRotation: {x: 0.7071077, y: 0.00028154056, z: 0.70710576, w: -0.00028154135}
+  m_LocalRotation: {x: 0.7071078, y: 0.0002815406, z: 0.7071058, w: -0.00028154138}
   m_LocalPosition: {x: 0.008938074, y: 0.000106626074, z: -0.052021638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1570,6 +1570,8 @@ MonoBehaviour:
   health: 1
   hurtSound: {fileID: 0}
   deathSound: {fileID: 0}
+  deathEffect: {fileID: 1597161252530732, guid: 11b79c261f6cf479eaf659e05ab10ae8,
+    type: 2}
 --- !u!114 &114288572679789988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1585,7 +1587,6 @@ MonoBehaviour:
   maxScale: {x: 4, y: 4, z: 1}
   scaleRate: 0.25
   initialScaleLerp: 0.2
-  lerpScaling: 1
   restoreRate: 0.1
   restoreDelay: 1
   scalingAffectsMass: 1
@@ -1635,6 +1636,7 @@ MonoBehaviour:
     velocity: 0
     smoothTime: 0.1
   attachFollower: {fileID: 0}
+  playerAnimator: {fileID: 95717552856503078}
 --- !u!114 &114613097888675052
 MonoBehaviour:
   m_ObjectHideFlags: 1

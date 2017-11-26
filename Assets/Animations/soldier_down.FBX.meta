@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 66fe2ff6e878a7947b63ae23bdd39f3d
-timeCreated: 1511718317
+guid: 623592c139e846643b9ef33b076b8655
+timeCreated: 1511725917
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -117,8 +117,7 @@ ModelImporter:
     3300000: Gun_NME
     4300000: Soldier_NME
     4300002: Gun_NME
-    7400000: JumpStart
-    7400002: JumpEnd
+    7400000: Aim Down
     9500000: //RootNode
     13700000: Soldier_NME
   externalObjects:
@@ -159,44 +158,16 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: JumpStart
+      name: Aim Down
       takeName: Take 001
-      firstFrame: 5
-      lastFrame: 12
+      firstFrame: 0
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: JumpEnd
-      takeName: Take 001
-      firstFrame: 12
-      lastFrame: 19
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
+      hasAdditiveReferencePose: 1
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
