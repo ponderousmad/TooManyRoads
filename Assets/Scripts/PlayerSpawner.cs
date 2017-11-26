@@ -45,8 +45,8 @@ public class PlayerSpawner : MonoBehaviour {
         {
             if(numSpawns == 0)
             {
-                gameRules.OnPlayerEliminated(this);
                 enabled = false;
+                gameRules.OnPlayerEliminated(this);
             } else
             {
                 SpawnPlayer();
