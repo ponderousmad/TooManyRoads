@@ -9,6 +9,7 @@ public class PhysCharacterController : MonoBehaviour {
 	public int maxJumps = 2;
 	public float slideConstantGravity = -2.0f;
 	public Vector2 wallJumpImpulse;
+	public float wallClingPersistence = 0.0f;
 
 	// Debug variables
 	public Vector2 debugVelocity;
@@ -21,6 +22,8 @@ public class PhysCharacterController : MonoBehaviour {
 
     private bool isOnGround;
 	private bool isClinging;
+	private float maintainClingTimer;
+	private float wallClingDir;
 	private int jumpCount;
 	private Rigidbody2D rigidBody;
 	private float lastDir;
@@ -80,8 +83,12 @@ public class PhysCharacterController : MonoBehaviour {
 			updatedVelocity.y = 0;
 			rigidBody.velocity = updatedVelocity;
 
-            if (isClinging && !isOnGround) {
-                rigidBody.velocity = new Vector2(wallJumpImpulse.x * -lastDir, wallJumpImpulse.y);
+			Debug.Log ("maintain cling timer: " + maintainClingTimer);
+			if ((isClinging || maintainClingTimer > 0) && !isOnGround) {
+				Debug.Log ("wall jump");
+
+				float impulseMultX = (wallClingDir + (lastDir * 0.5f));
+				rigidBody.velocity = new Vector2(wallJumpImpulse.x * impulseMultX, wallJumpImpulse.y);
                 smoothVelocity.currentValue = rigidBody.velocity.x;
                 smoothVelocity.velocity = smoothVelocity.currentValue;
 //				rigidBody.AddForce (new Vector2 (wallJumpImpulse.x * -lastDir, wallJumpImpulse.y), ForceMode2D.Impulse);
@@ -94,6 +101,10 @@ public class PhysCharacterController : MonoBehaviour {
 			if (jumpSound != null) {
 				mAudioSource.PlayOneShot (jumpSound);
 			}
+		}
+
+		if (maintainClingTimer > 0) {
+			maintainClingTimer -= Time.deltaTime;
 		}
 
         UpdateFollower();
@@ -115,6 +126,8 @@ public class PhysCharacterController : MonoBehaviour {
 		newDir = Mathf.Approximately(forward, 0.0f) ? 0.0f : Mathf.Sign (forward);
 
 		if (isClinging) { // Are we still clinging?
+			maintainClingTimer = wallClingPersistence;
+			Debug.Log ("maintain cling timer is now " + maintainClingTimer);
 			if (lastDir != newDir) {
 				isClinging = false;
 			}
@@ -150,6 +163,7 @@ public class PhysCharacterController : MonoBehaviour {
 				float rightDotCheck = Mathf.Cos (Mathf.Deg2Rad * wallSlope);
 				debugRightDotCheck = rightDotCheck;
 				if (Vector2.Dot(contacts[0].normal, Vector2.right * -lastDir) > rightDotCheck) {
+					wallClingDir = Mathf.Sign (contacts [0].normal.x);
 					OnClinged ();
 				}
 			}

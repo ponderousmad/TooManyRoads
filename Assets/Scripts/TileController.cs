@@ -75,7 +75,7 @@ public class TileController : MonoBehaviour {
 
         if(scrollValue > ((sceneCount-1) * 38.0f))
         {
-            CreateNewScene(gameScenes[Random.Range(0, gameScenes.Length - 1)]);
+            CreateNewScene(gameScenes[Random.Range(0, gameScenes.Length)]);
         }
 	}
 }
