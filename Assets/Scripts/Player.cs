@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
     public void ExportInputDefinitions()
     {
 		System.IO.File.WriteAllText(
-			@"/Users/agnomen/Documents/workspace/Inputs.txt",
+			@"/Users/agnomen/Documents/workspace/git/TooManyRoads/ProjectSettings/InputManager.asset",
 			PlayerInput.AllDefinitions()
 		);
     }
