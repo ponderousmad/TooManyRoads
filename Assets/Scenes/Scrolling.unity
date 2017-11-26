@@ -195,7 +195,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 1636856738}
-  gameScene: {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714, type: 2}
+  firstScene: {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714, type: 2}
+  secondScene: {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714,
+    type: 2}
+  gameScenes:
+  - {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714, type: 2}
   scrollValue: 0
   scrollSpeed: 0
   timeUntilIncrease: 5
