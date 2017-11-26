@@ -8,6 +8,7 @@ public class DamageController : MonoBehaviour {
 	public AudioClip hurtSound;
 	public AudioClip deathSound;
     public GameObject deathEffect;
+    public float invulnerableTime = 3.0f;
 
 	private float mCurrentHealth;
 	private bool mDead;
@@ -20,9 +21,17 @@ public class DamageController : MonoBehaviour {
 		mDead = false;
 	}
 
-	public void Damage(float damageAmount)
+    void Update()
+    {
+        if(invulnerableTime > 0.0f)
+        {
+            invulnerableTime -= Time.deltaTime;
+        }
+    }
+
+    public void Damage(float damageAmount, bool force = false)
 	{
-		if (mDead) {
+        if ((invulnerableTime > 0.0f && !force) || mDead) {
 			return;
 		}
 
