@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hazard : MonoBehaviour {
 
 	public float damageAmount = 1.0f;
-
+    public bool force = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,7 +20,16 @@ public class Hazard : MonoBehaviour {
         DamageController dc = collision.gameObject.GetComponent<DamageController>();
         if (dc != null)
         {
-            dc.Damage(damageAmount);
+            dc.Damage(damageAmount, force);
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        DamageController dc = collision.gameObject.GetComponent<DamageController>();
+        if (dc != null)
+        {
+            dc.Damage(damageAmount, force);
         }
     }
 
@@ -29,7 +38,7 @@ public class Hazard : MonoBehaviour {
 		DamageController dc = collision.gameObject.GetComponent<DamageController>();
 		if(dc != null)
 		{
-			dc.Damage(damageAmount);
+			dc.Damage(damageAmount, force);
 		}
 	}
 }

@@ -29,9 +29,9 @@ public class DamageController : MonoBehaviour {
         }
     }
 
-	public void Damage(float damageAmount)
+    public void Damage(float damageAmount, bool force = false)
 	{
-		if (invulnerableTime > 0.0f || mDead) {
+        if ((invulnerableTime > 0.0f && !force) || mDead) {
 			return;
 		}
 
