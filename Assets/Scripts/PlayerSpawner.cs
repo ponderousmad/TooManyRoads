@@ -45,6 +45,7 @@ public class PlayerSpawner : MonoBehaviour {
         {
             if(numSpawns == 0)
             {
+                display.SetLives(0);
                 gameRules.OnPlayerEliminated(this);
                 enabled = false;
             } else
@@ -76,6 +77,7 @@ public class PlayerSpawner : MonoBehaviour {
 
         if(bestSpawn != null)
         {
+            display.SetLives(numSpawns);
             player = Instantiate(playerPrefab, bestSpawn.transform.position, Quaternion.identity);
             Debug.Log("Spawned Player:");
             Debug.Log(player);
@@ -96,6 +98,7 @@ public class PlayerSpawner : MonoBehaviour {
         else
         {
             Debug.Log("Failed to spawn player " + playerId);
+            display.SetLives(numSpawns);
         }
     }
 }
