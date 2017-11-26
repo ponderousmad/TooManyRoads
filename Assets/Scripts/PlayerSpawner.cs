@@ -11,6 +11,8 @@ public class PlayerSpawner : MonoBehaviour {
     public Camera camera;
     private GameObject player;
 
+    public PlayerDisplay display;
+
 	// Use this for initialization
 	void Awake () {
 		string playerConfig = PlayerPrefs.GetString ("Player" + playerId, "");
@@ -21,6 +23,10 @@ public class PlayerSpawner : MonoBehaviour {
 
 	void Start () {
         if (!spawn || camera == null) {
+            if(display)
+            {
+                display.gameObject.SetActive(false);
+            }
 			Destroy (this.gameObject);
 			return;
 		}
@@ -57,11 +63,25 @@ public class PlayerSpawner : MonoBehaviour {
         if(bestSpawn != null)
         {
             player = Instantiate(playerPrefab, bestSpawn.transform.position, Quaternion.identity);
+            Debug.Log("Spawned Player:");
+            Debug.Log(player);
             //MeshRenderer playerRenderer = player.GetComponent<MeshRenderer> ();
             //playerRenderer.material.color = settings.tint;
 
             player.GetComponent<Player>().SetID(playerId);
 			Destroy(bestSpawn);
+
+            if(display)
+            {
+                foreach(var ammo in player.GetComponentsInChildren<AmmoController>())
+                {
+                    display.ammoController = ammo;
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("Failed to spawn player " + playerId);
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInput {
 	private bool useOneStickMode = false;
+    private bool useLastMove = false;
 
 	private string moveAxisX;
 	private string moveAxisY;
@@ -13,10 +14,13 @@ public class PlayerInput {
 	private string fireEmbiggen;
 	private string fireDebigulate;
 
+	private string selfEmbiggen;
+	private string selfDebigulate;
+
     private string pressButton;
     private string jumpButton;
 
-	private float aimAxisDeadzone = 0.5f;
+	private float aimAxisDeadzone = 0.25f;
 	private float jumpThreshold = 0.5f;
     private float fireThreshold = 0.5f;
     private float menuThreshold = 0.5f;
@@ -26,6 +30,8 @@ public class PlayerInput {
     private bool menuDown = false;
     private bool menuLeft = false;
     private bool menuRight = false;
+
+    private float lastMoveDirection = 1;
 
 	enum Axis
 	{
@@ -42,13 +48,15 @@ public class PlayerInput {
 		Embiggen = 0,
 		Debigulate = 1,
         Press = 2,
-        Jump = 3
+        Jump = 3,
+        SelfEmbiggen = 4,
+        SelfDebigulate = 5
 	}
 
 	private static int[] WindowsAxisNames = { 0, 1, 3, 4, 8, 9 };
-	private static int[] WindowsButtonNumbers = { 7, 6, 0, 0 };
+	private static int[] WindowsButtonNumbers = { 7, 6, 0, 0, 5, 4 };
 	private static int[] OSXAxisNames = { 0, 1, 2, 3, 4, 5 };
-	private static int[] OSXButtonNumbers = { 7, 6, 1, 1 };
+	private static int[] OSXButtonNumbers = { 7, 6, 1, 1, 5, 4 };
 
 	private static string PlatformName(RuntimePlatform platform)
 	{
@@ -209,6 +217,8 @@ public class PlayerInput {
         yield return ButtonAxisInput(Button.Debigulate, player, platform);
         yield return ButtonInput(Button.Press, player, platform, "space");
         yield return ButtonInput(Button.Jump, player, platform, "space");
+        yield return ButtonInput(Button.SelfEmbiggen, player, platform, "c");
+        yield return ButtonInput(Button.SelfDebigulate, player, platform, "z");
 	}
 
 	public static string AllDefinitions()
@@ -227,7 +237,7 @@ public class PlayerInput {
 		return definitions.ToString();
 	}
 
-	void Init(int number)
+	public PlayerInput(int number, bool oneStickMode = false, bool lastMoveMode = false)
 	{
 		string postfix = Postfix(number, Application.platform);
 		moveAxisX = Axis.MoveX.ToString() + postfix;
@@ -238,56 +248,56 @@ public class PlayerInput {
 		fireEmbiggen = Button.Embiggen.ToString() + postfix;
 		fireDebigulate = Button.Debigulate.ToString() + postfix;
 
+        selfEmbiggen = Button.SelfEmbiggen.ToString() + postfix;
+        selfDebigulate = Button.SelfDebigulate.ToString() + postfix;
+
 		pressButton = Button.Press.ToString() + postfix;
 		jumpButton = Button.Jump.ToString() + postfix;
-	}
 
-	public PlayerInput(int number)
-	{
-		Init (number);
-	}
 
-	public PlayerInput(int number, bool oneStickMode)
-	{
-		Init (number);
 		useOneStickMode = oneStickMode;
+        useLastMove = lastMoveMode;
 	}
 
 	private float GetAxis(string axis) {
-        float value = Input.GetAxisRaw(axis);
+        float value = Input.GetAxis(axis);
         return value;
     }
 	private bool HasAim(float value) { return Mathf.Abs(value) > aimAxisDeadzone; }
 
-	public float AimX { get { return GetAxis(aimAxisX); } }
-	public float AimY { get { return GetAxis(aimAxisY); } }
+	public float AimX { get { return GetAxis(useOneStickMode ? moveAxisX : aimAxisX); } }
+	public float AimY { get { return GetAxis(useOneStickMode ? moveAxisY : aimAxisY); } }
 	public bool HasAimX { get { return HasAim(AimX); } }
 	public bool HasAimY { get { return HasAim(AimY); } }
 	public bool IsGunToHead { get { return(!HasAimX && !HasAimY); } }
 	public Vector2 Aim(bool snap)
 	{
-		if (useOneStickMode) {
-			Vector2 precise = new Vector2 (MoveX, MoveY);
-			if (!snap) {
-				return precise;
-			}
-			return new Vector2 (
-				HasAim (precise.x) ? Mathf.Sign (precise.x) : 0,
-				HasAim (precise.y) ? Mathf.Sign (precise.y) : 0
-			);
-		} else {
-			Vector2 precise = new Vector2 (AimX, AimY);
-			if (!snap) {
-				return precise;
-			}
-			return new Vector2 (
-				HasAim (precise.x) ? Mathf.Sign (precise.x) : 0,
-				HasAim (precise.y) ? Mathf.Sign (precise.y) : 0
-			);
-		}
+        Vector2 precise = new Vector2 (MoveX, MoveY);
+        if(useLastMove && !HasAimY)
+        {
+            precise = new Vector2(lastMoveDirection, precise.y);
+        }
+        if (!snap)
+        {
+            return precise;
+        }
+        return new Vector2 (
+            HasAim (precise.x) ? Mathf.Sign (precise.x) : 0,
+            HasAim (precise.y) ? Mathf.Sign (precise.y) : 0
+        );
 	}
 
-	public float MoveX { get { return GetAxis(moveAxisX); } }
+	public float MoveX
+    {
+        get {
+            float move = GetAxis(moveAxisX);
+            if(Mathf.Abs(move) > aimAxisDeadzone)
+            {
+                lastMoveDirection = Mathf.Sign(move);
+            }
+            return move;
+        }
+    }
 	public float MoveY { get { return GetAxis(moveAxisY); } }
 
     private static bool AnalogToDigital(float input, float threshold, ref bool value)
@@ -310,6 +320,9 @@ public class PlayerInput {
 
 	public bool FireEmbiggen { get { return GetAxis(fireEmbiggen) > fireThreshold; } }
 	public bool FireDebigulate { get { return GetAxis(fireDebigulate) > fireThreshold; } }
+
+    public bool SelfEmbiggen { get { return Input.GetButton(selfEmbiggen); } }
+    public bool SelfDebigulate { get { return Input.GetButton(selfDebigulate); } }
 
     public bool MenuPress { get { return Input.GetButtonDown(pressButton); } }
 

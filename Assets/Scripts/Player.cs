@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	public bool mUseOneStickMode;
+	public bool useOneStickMode;
+    public bool useLastMove;
 
 	private PlayerInput mInput;
     private int mPlayerID = 0;
@@ -22,7 +23,7 @@ public class Player : MonoBehaviour {
     {
         Debug.Log("Setting player ID to: " + mPlayerID.ToString());
         mPlayerID = id;
-		mInput = new PlayerInput(mPlayerID + 1, mUseOneStickMode);
+		mInput = new PlayerInput(mPlayerID + 1, useOneStickMode, useLastMove);
 
         PhysCharacterController controller = GetComponent<PhysCharacterController>();
         controller.SetPlayerInput(mInput);
@@ -61,7 +62,10 @@ public class Player : MonoBehaviour {
 				if (renderer) {
 					renderer.material.SetColor ("_Color", settings.tint);
 					renderer.material.SetColor ("_Accent", settings.stripe);
-					renderer.material.SetTexture ("_MainTex", settings.pattern.texture);
+                    if(settings.pattern)
+                    {
+					    renderer.material.SetTexture ("_MainTex", settings.pattern.texture);
+                    }
 				}
 			}
 		}

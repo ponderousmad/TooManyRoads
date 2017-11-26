@@ -11,6 +11,7 @@ public class ProjectileShooter : MonoBehaviour {
 	public float projectileSpeed = 10.0f;
 	public float fireRate = 1.0f;
 	public float requiredAmmo = 1.0f;
+    public float selfEmbiggen = 0.1f;
 
 	private float mShootTimer;
 
@@ -33,13 +34,33 @@ public class ProjectileShooter : MonoBehaviour {
 		if (mShootTimer > 0) {
 			mShootTimer -= Time.deltaTime;
 		}
-
-		if (mPlayerInput.FireEmbiggen && CanShoot()) {
-			ShootProjectile (projectileType1);
-		}
-		if (mPlayerInput.FireDebigulate && CanShoot()) {
-			ShootProjectile (projectileType2);
-		}
+        
+        if(!CanShoot())
+        {
+            return;
+        }
+        Embiggener embiggener = transform.parent.GetComponent<Embiggener>();
+        if(embiggener != null) 
+        {
+            if(mPlayerInput.SelfEmbiggen)
+            {
+                Debug.Log("Embiggen self");
+                embiggener.Embiggen(selfEmbiggen);
+                SpendProjectile();
+            }
+            else if(mPlayerInput.SelfDebigulate)
+            {
+                Debug.Log("Debigulate self");
+                embiggener.Embiggen(-selfEmbiggen);
+                SpendProjectile();
+            }
+        }
+        if (mPlayerInput.FireEmbiggen) {
+            ShootProjectile (projectileType1);
+        }
+        if (mPlayerInput.FireDebigulate) {
+            ShootProjectile (projectileType2);
+        }
 	}
 
 	void ShootProjectile(GameObject projectileType)
@@ -58,11 +79,16 @@ public class ProjectileShooter : MonoBehaviour {
 		KinematicProjectile kinBehavior = projectile.GetComponent<KinematicProjectile> ();
 		if (kinBehavior != null) {
 			kinBehavior.SetVelocity (aim * projectileSpeed);
+			kinBehavior.SetInstigator (gameObject);
 		}
+        SpendProjectile();
+	}
 
+    private void SpendProjectile()
+    {
 		mShootTimer = (1 / fireRate);
 		mAmmoControl.UseAmmo (requiredAmmo);
-	}
+    }
 
 	private bool CanShoot()
 	{
