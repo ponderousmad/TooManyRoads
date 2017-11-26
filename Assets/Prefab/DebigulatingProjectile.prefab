@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   embiggenAmount: -0.2
+  sound: {fileID: 8300000, guid: e3769d2f751aaa44bb3b70f1f8ef012e, type: 3}
 --- !u!212 &212167494345073674
 SpriteRenderer:
   m_ObjectHideFlags: 1
