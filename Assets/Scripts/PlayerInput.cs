@@ -268,7 +268,7 @@ public class PlayerInput {
 	public float MoveX { get { return GetAxis(moveAxisX); } }
 	public float MoveY { get { return GetAxis(moveAxisY); } }
 
-    private static AnalogToDigital(float input, float threshold, ref value)
+    private static bool AnalogToDigital(float input, float threshold, ref bool value)
     {
         bool prevValue = value;
         value = input > threshold;
