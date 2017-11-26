@@ -230,6 +230,7 @@ MonoBehaviour:
   maxScale: {x: 4, y: 4, z: 1}
   scaleRate: 2
   initialScaleLerp: 0.5
+  lerpScaling: 1
   restoreRate: 0.1
   restoreDelay: 1
   scalingAffectsMass: 1
@@ -245,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refillRate: 1
-  fluidProjectileType: {fileID: 1503055886885436, guid: a69c707f473034ec4a0be85a34eeaf18,
+  fluidProjectileType: {fileID: 1672504919882716, guid: b23db665be3094662937bedd748ed297,
     type: 2}
   sizeConstant: 1
   minDropSize: 0.1
