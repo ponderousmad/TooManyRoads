@@ -73,6 +73,10 @@ public class GameGod : MonoBehaviour {
 
 		if (firstRun) {
 			trackers = new PlayerData[players.Length];
+		} else {
+			for (int i = 0; i < trackers.Length; ++i) {
+				trackers [i].remainingLives = 3;
+			}
 		}
 
 		for (int i = 0; i < players.Length; ++i) {
@@ -80,8 +84,8 @@ public class GameGod : MonoBehaviour {
 
 			if (firstRun) {
 				trackers [i] = new PlayerData ();
+				trackers [i].playerId = players [i].GetId ();
 			}
-			trackers[i].playerId = players[i].GetId();
 		}
 
 		if (trackers.Length == 1) {
@@ -111,12 +115,9 @@ public class GameGod : MonoBehaviour {
 		}
 
 		int deadCount = 0;
-		int aliveId = -1;
 		for (int i = 0; i < trackers.Length; ++i) {
 			if (trackers [i].remainingLives == 0) {
 				deadCount++;
-			} else {
-				aliveId = i;
 			}
 		}
 
@@ -127,6 +128,14 @@ public class GameGod : MonoBehaviour {
 			}
 		} else {
 			if (deadCount >= (trackers.Length - 1)) {
+				int aliveId = -1;
+				for (int i = 0; i < trackers.Length; ++i) {
+					if (trackers [i].remainingLives > 0) {
+						aliveId = trackers[i].playerId;
+						break;
+					}
+				}
+
 				trackers [aliveId].score++;
 				if (trackers [aliveId].score == MAX_SCORE) {
 					winnerId = aliveId;

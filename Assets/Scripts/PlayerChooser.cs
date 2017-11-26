@@ -23,9 +23,11 @@ public class PlayerChooser : MonoBehaviour {
 	public int minPlayers = 2;
 	public GameObject[] activeUIs;
 	public GameObject[] chooseUIs;
+	public GameObject initialScreen;
 
 	private PlayerInfo[] players;
 	private int currentPlayers = 0;
+	private bool initialScreenIsVisible = true;
 
 	// Use this for initialization
 	void Awake () {
@@ -46,6 +48,16 @@ public class PlayerChooser : MonoBehaviour {
 	}
 
 	void InputCheck () {
+		if (initialScreenIsVisible) {
+			for (int i = 0; i < MAX_PLAYERS; ++i) {
+				if (players [i].input.MenuPress) {
+					initialScreen.SetActive (false);
+					initialScreenIsVisible = false;
+				}
+			}
+
+			return;
+		}
 		for (int i = 0; i < MAX_PLAYERS; ++i) {
 			// Join or leave check
 			if (players [i].input.FireEmbiggen) {
