@@ -17,7 +17,7 @@ public class PlayerInfo {
 }
 
 public class PlayerChooser : MonoBehaviour {
-	const int MAX_PLAYERS = 4;
+	const int MAX_PLAYERS = 1;
 
 	public string mainSceneName;
 	public int minPlayers = 1;
@@ -27,9 +27,13 @@ public class PlayerChooser : MonoBehaviour {
 	private PlayerInfo[] players;
 	private int currentPlayers = 0;
 
+	//debug vars
+	public bool[] embiggens;
+
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		players = new PlayerInfo[MAX_PLAYERS];
+		embiggens = new bool[MAX_PLAYERS];
 
 		for (int i = 0; i < MAX_PLAYERS; ++i) {
 			players [i] = new PlayerInfo (i);
@@ -48,6 +52,7 @@ public class PlayerChooser : MonoBehaviour {
 	void InputCheck () {
 		for (int i = 0; i < MAX_PLAYERS; ++i) {
 			// Join or leave check
+			embiggens[i] = players[i].input.FireEmbiggen;
 			if (players [i].input.FireEmbiggen) {
 				if (!players [i].isActive) {
 					ShowPlayer (i);
@@ -59,7 +64,7 @@ public class PlayerChooser : MonoBehaviour {
 			}
 
 			// Start the game check
-			if (players[i].input.Jump && currentPlayers >= minPlayers) {
+			if (players[i].input.MenuPress && currentPlayers >= minPlayers) {
 				StartGame ();
 			}
 		}
@@ -90,7 +95,7 @@ public class PlayerChooser : MonoBehaviour {
 		SceneManager.LoadSceneAsync (mainSceneName);
 	}
 
-	public void GetPlayerInfo(int id, ref PlayerInfo info) {
-		info = players [id];
+	public PlayerInfo GetPlayerInfo(int id) {
+		return(players [id]);
 	}
 }
