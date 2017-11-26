@@ -53,7 +53,7 @@ public class PlayerInput {
         SelfDebigulate = 5
 	}
 
-	private static int[] WindowsAxisNames = { 0, 1, 3, 4, 8, 9 };
+	private static int[] WindowsAxisNames = { 0, 1, 3, 4, 9, 8 };
 	private static int[] WindowsButtonNumbers = { 7, 6, 0, 0, 5, 4 };
 	private static int[] OSXAxisNames = { 0, 1, 2, 3, 4, 5 };
 	private static int[] OSXButtonNumbers = { 7, 6, 1, 1, 5, 4 };
@@ -261,6 +261,7 @@ public class PlayerInput {
 
 	private float GetAxis(string axis) {
         float value = Input.GetAxis(axis);
+        //Debug.Log("Checking axis: " + axis + " = " + value);
         return value;
     }
 	private bool HasAim(float value) { return Mathf.Abs(value) > aimAxisDeadzone; }

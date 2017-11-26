@@ -69,6 +69,7 @@ public class PlayerChooser : MonoBehaviour {
 		players [id].isActive = true;
 		players [id].activeUI.SetActive (true);
 		players [id].chooseUI.SetActive (false);
+        Debug.Log("Showing Player " + id);
 		++currentPlayers;
 	}
 
@@ -76,6 +77,7 @@ public class PlayerChooser : MonoBehaviour {
 		players [id].isActive = false;
 		players [id].activeUI.SetActive (false);
 		players [id].chooseUI.SetActive (true);
+        Debug.Log("Hiding Player " + id);
 		--currentPlayers;
 	}
 

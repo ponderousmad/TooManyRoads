@@ -468,7 +468,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 8
+    axis: 9
     joyNum: 1
   - serializedVersion: 3
     m_Name: Debigulate_P1_WIN
@@ -484,7 +484,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 9
+    axis: 8
     joyNum: 1
   - serializedVersion: 3
     m_Name: Embiggen_P1_WIN
@@ -660,7 +660,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 8
+    axis: 9
     joyNum: 2
   - serializedVersion: 3
     m_Name: Debigulate_P2_WIN
@@ -676,7 +676,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 9
+    axis: 8
     joyNum: 2
   - serializedVersion: 3
     m_Name: Embiggen_P2_WIN
@@ -852,7 +852,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 8
+    axis: 9
     joyNum: 3
   - serializedVersion: 3
     m_Name: Debigulate_P3_WIN
@@ -868,7 +868,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 9
+    axis: 8
     joyNum: 3
   - serializedVersion: 3
     m_Name: Embiggen_P3_WIN
@@ -1044,7 +1044,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 8
+    axis: 9
     joyNum: 4
   - serializedVersion: 3
     m_Name: Debigulate_P4_WIN
@@ -1060,7 +1060,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 9
+    axis: 8
     joyNum: 4
   - serializedVersion: 3
     m_Name: Embiggen_P4_WIN
