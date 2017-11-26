@@ -22,7 +22,7 @@ public class GameGod : MonoBehaviour {
 	public float nextGameTime = 3.0f;
 
 	private int winnerId = 0;
-	private int MAX_SCORE = 1;
+	private int MAX_SCORE = 3;
 	private bool needsToSetWinner = false;
 	private bool needsToTrackPlayers = false;
 	private PlayerData [] trackers;
