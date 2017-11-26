@@ -5,8 +5,12 @@ using UnityEngine;
 public class DamageController : MonoBehaviour {
 
 	public float health;
+	public AudioClip hurtSound;
+	public AudioClip deathSound;
+
 	private float mCurrentHealth;
 	private bool mDead;
+	private AudioSource mAudioSource;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +31,14 @@ public class DamageController : MonoBehaviour {
 
 		mCurrentHealth -= damageAmount;
 		if (mCurrentHealth <= 0) {
+			if (deathSound != null) {
+				mAudioSource.PlayOneShot (deathSound);
+			}
 			Die ();
+		} else {
+			if (hurtSound != null) {
+				mAudioSource.PlayOneShot (hurtSound);
+			}
 		}
 	}
 
@@ -36,5 +47,9 @@ public class DamageController : MonoBehaviour {
 		mDead = true;
 		//Debug.Log ("I died!");
         Destroy(this.gameObject);
+	}
+
+	public void SetAudioSource(AudioSource audioSource) {
+		mAudioSource = audioSource;
 	}
 }

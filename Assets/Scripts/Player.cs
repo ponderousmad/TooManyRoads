@@ -13,6 +13,12 @@ public class Player : MonoBehaviour {
 	private PlayerSettings settings;
 	private bool wentToChooseLevel;
 
+	private AudioSource audioSource;
+	public AudioClip jump;
+	public AudioClip shootEmbig;
+	public AudioClip shootDebig;
+	public AudioClip die;
+
     [ContextMenu ("ExportInputDefintions")]
     public void ExportInputDefinitions()
     {
@@ -29,16 +35,23 @@ public class Player : MonoBehaviour {
 		}
 
         Debug.Log("Setting player ID to: " + mPlayerID.ToString());
+		audioSource = GetComponent<AudioSource> ();
+
         mPlayerID = id;
 		mInput = new PlayerInput(mPlayerID + 1, useOneStickMode, useLastMove);
 
         PhysCharacterController controller = GetComponent<PhysCharacterController>();
         controller.SetPlayerInput(mInput);
+		controller.SetAudioSource (audioSource);
 
 		foreach(var shooter in GetComponentsInChildren<ProjectileShooter>())
 		{
 			shooter.SetInput(mInput);
+			shooter.SetAudioSource (audioSource);
 		}
+
+		DamageController dm = GetComponent<DamageController> ();
+		dm.SetAudioSource (audioSource);
 
 		string playerConfig = PlayerPrefs.GetString ("Player" + mPlayerID, "");
 		if (playerConfig.CompareTo("") != 0) {
