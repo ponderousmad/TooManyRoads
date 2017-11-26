@@ -4,5 +4,5 @@
 public class PlayerSettings {
 	public Color tint;
 	public Color stripe;
-	public Texture pattern;
+	public Sprite pattern;
 }
