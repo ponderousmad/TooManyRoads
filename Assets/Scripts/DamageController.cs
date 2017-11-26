@@ -12,16 +12,12 @@ public class DamageController : MonoBehaviour {
 	private float mCurrentHealth;
 	private bool mDead;
 	private AudioSource mAudioSource;
+	private Player mPlayerRef;
 
 	// Use this for initialization
 	void Start () {
 		mCurrentHealth = health;
 		mDead = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
 	public void Damage(float damageAmount)
@@ -46,13 +42,20 @@ public class DamageController : MonoBehaviour {
 	void Die()
 	{
 		mDead = true;
+		mPlayerRef.SendDeath ();
+
         if(deathEffect)
         {
             var effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             effect.transform.localScale = transform.localScale;
         }
+
 		//Debug.Log ("I died!");
         Destroy(this.gameObject);
+	}
+
+	public void SetPlayer (Player myPlayer) {
+		mPlayerRef = myPlayer;
 	}
 
 	public void SetAudioSource(AudioSource audioSource) {

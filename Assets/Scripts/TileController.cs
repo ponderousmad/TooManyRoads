@@ -53,8 +53,6 @@ public class TileController : MonoBehaviour {
             return;
         }
 
-        GameRules.OnGameOver += StopMovingCamera;
-
         CreateNewScene(firstScene);
         CreateNewScene(secondScene);
 	}
