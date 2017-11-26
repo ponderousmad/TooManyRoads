@@ -660,7 +660,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4151163504190022}
   - component: {fileID: 114672435785631954}
-  - component: {fileID: 114145590792734914}
   m_Layer: 0
   m_Name: PlayerSpawner (3)
   m_TagString: Spawn1
@@ -711,7 +710,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4398028977955166}
   - component: {fileID: 114858524523649250}
-  - component: {fileID: 114772538439163480}
   m_Layer: 0
   m_Name: PlayerSpawner (2)
   m_TagString: Spawn1
@@ -791,7 +789,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4458599001442300}
   - component: {fileID: 114608826102031284}
-  - component: {fileID: 114324994236658452}
   m_Layer: 0
   m_Name: PlayerSpawner (0)
   m_TagString: Spawn1
@@ -1162,7 +1159,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4670684027491656}
   - component: {fileID: 114030745961392660}
-  - component: {fileID: 114576078027049042}
   m_Layer: 0
   m_Name: PlayerSpawner (1)
   m_TagString: Spawn1
@@ -4037,17 +4033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1053485722270000}
---- !u!114 &114145590792734914
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1477913152946102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e63e598dd934a5a984f9fae00b7f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114147832283458508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4318,17 +4303,6 @@ MonoBehaviour:
   restoreRate: 0.1
   restoreDelay: 1
   scalingAffectsMass: 1
---- !u!114 &114324994236658452
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1589215405140016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e63e598dd934a5a984f9fae00b7f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114328652845571854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4719,17 +4693,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1053485722270000}
---- !u!114 &114576078027049042
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1777373578972110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e63e598dd934a5a984f9fae00b7f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114581412262127336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5102,17 +5065,6 @@ MonoBehaviour:
   restoreRate: 0.1
   restoreDelay: 1
   scalingAffectsMass: 1
---- !u!114 &114772538439163480
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1498218499991414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e63e598dd934a5a984f9fae00b7f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114777286827342436
 MonoBehaviour:
   m_ObjectHideFlags: 1

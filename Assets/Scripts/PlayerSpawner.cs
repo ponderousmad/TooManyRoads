@@ -55,12 +55,15 @@ public class PlayerSpawner : MonoBehaviour {
                 bestX = distanceFromCamera;
             }
         }
-            
-        player = Instantiate (playerPrefab, bestSpawn.transform.position, Quaternion.identity);
-        Destroy(bestSpawn);
-        //MeshRenderer playerRenderer = player.GetComponent<MeshRenderer> ();
-        //playerRenderer.material.color = settings.tint;
 
-        player.GetComponent<Player>().SetID(playerId);
+        if(bestSpawn != null)
+        {
+            player = Instantiate(playerPrefab, bestSpawn.transform.position, Quaternion.identity);
+            Destroy(bestSpawn);
+            //MeshRenderer playerRenderer = player.GetComponent<MeshRenderer> ();
+            //playerRenderer.material.color = settings.tint;
+
+            player.GetComponent<Player>().SetID(playerId);
+        }
     }
 }
