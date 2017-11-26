@@ -1570,6 +1570,8 @@ MonoBehaviour:
   health: 1
   hurtSound: {fileID: 0}
   deathSound: {fileID: 0}
+  deathEffect: {fileID: 1597161252530732, guid: 11b79c261f6cf479eaf659e05ab10ae8,
+    type: 2}
 --- !u!114 &114288572679789988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1585,7 +1587,6 @@ MonoBehaviour:
   maxScale: {x: 4, y: 4, z: 1}
   scaleRate: 0.25
   initialScaleLerp: 0.2
-  lerpScaling: 1
   restoreRate: 0.1
   restoreDelay: 1
   scalingAffectsMass: 1
