@@ -1304,7 +1304,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1797854963973648}
-  m_LocalRotation: {x: 0.7071078, y: 0.0002815406, z: -0.7071058, w: 0.00028154138}
+  m_LocalRotation: {x: 0.7071077, y: 0.00028154056, z: -0.70710576, w: 0.00028154135}
   m_LocalPosition: {x: 0.008938074, y: 0.00010633748, z: 0.052021638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1349,7 +1349,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217513761714260}
-  m_LocalRotation: {x: 0.7071078, y: 0.0002815406, z: 0.7071058, w: -0.00028154138}
+  m_LocalRotation: {x: 0.7071077, y: 0.00028154056, z: 0.70710576, w: -0.00028154135}
   m_LocalPosition: {x: 0.008938074, y: 0.000106626074, z: -0.052021638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1659,9 +1659,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   hurtSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: f4fbc506c70ef4d6f8a7d79d5f6e0914, type: 3}
   deathEffect: {fileID: 1597161252530732, guid: 11b79c261f6cf479eaf659e05ab10ae8,
     type: 2}
+  invulnerableTime: 3
 --- !u!114 &114288572679789988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1692,8 +1693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c97db7959e64e359c5ee896028ffb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 15
-  rechargeRate: 2
+  maxAmmo: 30
+  rechargeRate: 3
   startFull: 1
 --- !u!114 &114555847189861928
 MonoBehaviour:

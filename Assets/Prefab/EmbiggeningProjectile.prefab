@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1503055886885436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.58, y: -0.36, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   embiggenAmount: 0.2
-  sound: {fileID: 8300000, guid: 1eac3db8c36f31f48b5cddeb85fedbef, type: 3}
+  sound: {fileID: 8300000, guid: 6160b404fe965e142bd95e38b75181ad, type: 3}
 --- !u!114 &114714412062953968
 MonoBehaviour:
   m_ObjectHideFlags: 1

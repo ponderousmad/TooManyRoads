@@ -63,7 +63,7 @@ public class PlayerSpawner : MonoBehaviour {
         foreach(GameObject go in respawns)
         {
             float distanceFromCamera = go.transform.position.x - camera.transform.position.x;
-            if(Mathf.Abs(distanceFromCamera) < cameraHorizontalSize && distanceFromCamera > bestX)
+            if((distanceFromCamera > (-cameraHorizontalSize / 3.0f)) && (distanceFromCamera < (2.0 * cameraHorizontalSize / 3.0f)) && distanceFromCamera > bestX)
             {
                 bestSpawn = go;
                 bestX = distanceFromCamera;
