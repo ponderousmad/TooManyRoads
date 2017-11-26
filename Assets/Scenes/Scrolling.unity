@@ -249,7 +249,7 @@ MonoBehaviour:
   scrollSpeed: 0
   timeUntilIncrease: 5
   timeBetweenIncreases: 20
-  scrollSpeedIncrease: 1
+  scrollSpeedIncrease: 0.5
 --- !u!4 &1636856738 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4196389670453448, guid: 0edf7027c92f1364a87d720bee41f27b,
