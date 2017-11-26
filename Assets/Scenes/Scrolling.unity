@@ -151,25 +151,45 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114858524523649250, guid: 0edf7027c92f1364a87d720bee41f27b,
+    - target: {fileID: 224295594826166086, guid: 0edf7027c92f1364a87d720bee41f27b,
         type: 2}
-      propertyPath: gameRules
-      value: 
+      propertyPath: m_LocalPosition.x
+      value: 179
       objectReference: {fileID: 0}
-    - target: {fileID: 114608826102031284, guid: 0edf7027c92f1364a87d720bee41f27b,
+    - target: {fileID: 224295594826166086, guid: 0edf7027c92f1364a87d720bee41f27b,
         type: 2}
-      propertyPath: gameRules
-      value: 
+      propertyPath: m_LocalPosition.y
+      value: -98.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114672435785631954, guid: 0edf7027c92f1364a87d720bee41f27b,
+    - target: {fileID: 224700491198639648, guid: 0edf7027c92f1364a87d720bee41f27b,
         type: 2}
-      propertyPath: gameRules
-      value: 
+      propertyPath: m_LocalPosition.x
+      value: 179
       objectReference: {fileID: 0}
-    - target: {fileID: 114030745961392660, guid: 0edf7027c92f1364a87d720bee41f27b,
+    - target: {fileID: 224700491198639648, guid: 0edf7027c92f1364a87d720bee41f27b,
         type: 2}
-      propertyPath: gameRules
-      value: 
+      propertyPath: m_LocalPosition.y
+      value: 98.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224384415862693740, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -179
+      objectReference: {fileID: 0}
+    - target: {fileID: 224384415862693740, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 98.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224154456583687104, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -179
+      objectReference: {fileID: 0}
+    - target: {fileID: 224154456583687104, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -98.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0edf7027c92f1364a87d720bee41f27b, type: 2}
@@ -224,6 +244,7 @@ MonoBehaviour:
   - {fileID: 1567495289153052, guid: b776482a05aea17419956bf1de2be56a, type: 2}
   - {fileID: 1979166079897838, guid: ca3c68f3b5eb6134ba4cdbdc7d822f4b, type: 2}
   - {fileID: 1252432178257128, guid: 4fbc8f41670ad7644b8d3d7ab56a878d, type: 2}
+  - {fileID: 1719467133859182, guid: aa175207cf4a22d49b59474a2ca13774, type: 2}
   scrollValue: 0
   scrollSpeed: 0
   timeUntilIncrease: 5

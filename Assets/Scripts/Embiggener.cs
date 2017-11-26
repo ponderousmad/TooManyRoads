@@ -8,6 +8,7 @@ public class Embiggener : MonoBehaviour {
     public Vector3 maxScale = new Vector3(1.0f, 1.0f, 1.0f);
     public float scaleRate = 1.0f;
     public float initialScaleLerp = 0.5f;
+	public float lerpScaling = 1.0f;
 
     public float restoreRate = 0.1f;
     public float restoreDelay = 1.0f;
@@ -76,7 +77,7 @@ public class Embiggener : MonoBehaviour {
 
     public void Embiggen(float amount)
     {
-        mTargetScaleValue = Mathf.Clamp(mTargetScaleValue+amount, 0.0f, 1.0f);
+		mTargetScaleValue = Mathf.Clamp(mTargetScaleValue+amount*lerpScaling, 0.0f, 1.0f);
         mScaleRate = scaleRate;
         mRestoreTimer = restoreDelay;
     }
@@ -104,7 +105,7 @@ public class Embiggener : MonoBehaviour {
 
     private float GetScaleLerpAmount(float scaleValue)
     {
-        return(scaleValue);
+		return(scaleValue);
         //float t = Mathf.Clamp(scaleValue/scaleRate + 0.5f, 0.0f, 1.0f); 
         //return(t);
     }
