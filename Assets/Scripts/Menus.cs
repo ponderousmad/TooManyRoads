@@ -6,10 +6,6 @@ public class Menus : MonoBehaviour {
 
 	public void Play()
 	{
-		System.IO.File.WriteAllText(
-			@"/Users/agnomen/Documents/workspace/git/TooManyRoads/Assets/Inputs.txt",
-			PlayerInput.AllDefinitions()
-		);
 	}
 
 	// Use this for initialization

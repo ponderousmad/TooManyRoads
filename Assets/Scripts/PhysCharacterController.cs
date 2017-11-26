@@ -24,6 +24,8 @@ public class PhysCharacterController : MonoBehaviour {
 	private Rigidbody2D rigidBody;
 	private float lastDir;
 
+    private PlayerInput playerInput;
+
     public SmoothCD smoothVelocity = new SmoothCD();
 
     public Transform attachFollower;
@@ -38,6 +40,11 @@ public class PhysCharacterController : MonoBehaviour {
 		lastDir = 0.0f;
 	}
 
+    public void SetPlayerInput(PlayerInput input)
+    {
+        playerInput = input;
+    }
+
     private void UpdateFollower()
     {
         if(attachFollower != null)
@@ -50,7 +57,7 @@ public class PhysCharacterController : MonoBehaviour {
 
 	void Update() {
 		bool canJump = jumpCount < maxJumps;
-		if (canJump && Input.GetButtonDown("Jump")) {
+		if (canJump && playerInput.Jump) {
 			Vector2 updatedVelocity = rigidBody.velocity;
 			updatedVelocity.y = 0;
 			rigidBody.velocity = updatedVelocity;
@@ -74,7 +81,7 @@ public class PhysCharacterController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		Vector2 moveForce = rigidBody.velocity;
-		float forward = Input.GetAxisRaw ("Horizontal") * movementSpeed;
+		float forward = playerInput.MoveX * movementSpeed;
 
         smoothVelocity.smoothTime = isOnGround ? 0.1f : 0.25f;
         smoothVelocity.targetValue = forward;
