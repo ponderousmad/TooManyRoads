@@ -17,23 +17,19 @@ public class PlayerInfo {
 }
 
 public class PlayerChooser : MonoBehaviour {
-	const int MAX_PLAYERS = 1;
+	const int MAX_PLAYERS = 4;
 
 	public string mainSceneName;
-	public int minPlayers = 1;
+	public int minPlayers = 2;
 	public GameObject[] activeUIs;
 	public GameObject[] chooseUIs;
 
 	private PlayerInfo[] players;
 	private int currentPlayers = 0;
 
-	//debug vars
-	public bool[] embiggens;
-
 	// Use this for initialization
 	void Awake () {
 		players = new PlayerInfo[MAX_PLAYERS];
-		embiggens = new bool[MAX_PLAYERS];
 
 		for (int i = 0; i < MAX_PLAYERS; ++i) {
 			players [i] = new PlayerInfo (i);
@@ -52,7 +48,6 @@ public class PlayerChooser : MonoBehaviour {
 	void InputCheck () {
 		for (int i = 0; i < MAX_PLAYERS; ++i) {
 			// Join or leave check
-			embiggens[i] = players[i].input.FireEmbiggen;
 			if (players [i].input.FireEmbiggen) {
 				if (!players [i].isActive) {
 					ShowPlayer (i);
