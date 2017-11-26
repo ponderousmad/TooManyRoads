@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 23972979783794862}
   m_Layer: 0
   m_Name: Visuals
-  m_TagString: Untagged
+  m_TagString: Visuals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: cb8ef242a0b7db24cbc828d8272b1d3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e63e598dd934a5a984f9fae00b7f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mUseOneStickMode: 0
 --- !u!114 &114797947526129932
 MonoBehaviour:
   m_ObjectHideFlags: 1
