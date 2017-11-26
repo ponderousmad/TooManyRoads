@@ -13,8 +13,6 @@ public class PlayerSpawner : MonoBehaviour {
 
     public PlayerDisplay display;
 
-    public GameRules gameRules;
-
     public int numSpawns = 3;
 
 
@@ -35,8 +33,6 @@ public class PlayerSpawner : MonoBehaviour {
 			Destroy (this.gameObject);
 			return;
 		}
-
-        gameRules.OnPlayerSpawned(this);
 	}
 
     void Update()
@@ -46,7 +42,6 @@ public class PlayerSpawner : MonoBehaviour {
             if(numSpawns == 0)
             {
                 enabled = false;
-                gameRules.OnPlayerEliminated(this);
             } else
             {
                 SpawnPlayer();
