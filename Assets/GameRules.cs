@@ -11,7 +11,7 @@ public class GameRules : MonoBehaviour {
     int deadPlayers = 0;
 
     bool gameIsOver = false;
-    int timeToNextLevel = 5.0f;
+    float timeToNextLevel = 5.0f;
 
 	// Use this for initialization
 	void Start () {
