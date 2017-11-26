@@ -34,6 +34,11 @@ public class TileController : MonoBehaviour {
         ++sceneCount;
     }
 
+    void StopMovingCamera()
+    {
+        enabled = false;
+    }
+
 	// Use this for initialization
 	void Start () {
         if(gameCamera == null)
@@ -47,6 +52,8 @@ public class TileController : MonoBehaviour {
             gameObject.SetActive(false);
             return;
         }
+
+        GameRules.OnGameOver += StopMovingCamera;
 
         CreateNewScene(firstScene);
         CreateNewScene(secondScene);

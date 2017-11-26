@@ -75,21 +75,17 @@ public class Player : MonoBehaviour {
 	public PlayerInput Input { get { return mInput; } }
 
 	void TryUseSettings() {
-		for (int i = 0; i < transform.childCount; ++i) {
-			Transform child = transform.GetChild (i);
-			if (child.gameObject && child.gameObject.CompareTag ("Visuals")) {
-				MeshRenderer renderer = child.GetComponent<MeshRenderer> ();
-				if (renderer) {
-					renderer.material.SetColor ("_Color", settings.tint);
-					renderer.material.SetColor ("_Accent", settings.stripe);
+        SkinnedMeshRenderer renderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        if (renderer) {
+            renderer.material.SetColor ("_Color", settings.tint);
+            renderer.material.SetColor ("_Accent", settings.stripe);
 
-					if (wentToChooseLevel && settings.pattern != null && settings.pattern.texture != null) {
-						renderer.material.SetTexture ("_MainTex", settings.pattern.texture);
-					} else {
-						renderer.material.SetTexture ("_MainTex", fallbackTexture);
-					}
-				}
-			}
-		}
+            if (wentToChooseLevel && settings.pattern != null && settings.pattern.texture != null) {
+                renderer.material.SetTexture ("_MainTex", settings.pattern.texture);
+            } else {
+                print("Using fallback texture!");
+                renderer.material.SetTexture ("_MainTex", fallbackTexture);
+            }
+        }
 	}
 }

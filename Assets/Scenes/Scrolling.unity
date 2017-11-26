@@ -151,6 +151,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114858524523649250, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: gameRules
+      value: 
+      objectReference: {fileID: 1970908424}
+    - target: {fileID: 114608826102031284, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: gameRules
+      value: 
+      objectReference: {fileID: 1970908424}
+    - target: {fileID: 114672435785631954, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: gameRules
+      value: 
+      objectReference: {fileID: 1970908424}
+    - target: {fileID: 114030745961392660, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: gameRules
+      value: 
+      objectReference: {fileID: 1970908424}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0edf7027c92f1364a87d720bee41f27b, type: 2}
   m_IsPrefabParent: 0
@@ -195,8 +215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 1636856738}
-  firstScene: {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714, type: 2}
-  secondScene: {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714,
+  firstScene: {fileID: 1154686165225608, guid: e130cdcd1e3069145ac4948ef2a73dad, type: 2}
+  secondScene: {fileID: 1670286024904160, guid: 67bfe62d9d0272a42b6e6c6b34962cd0,
     type: 2}
   gameScenes:
   - {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714, type: 2}
@@ -210,3 +230,19 @@ Transform:
   m_PrefabParentObject: {fileID: 4196389670453448, guid: 0edf7027c92f1364a87d720bee41f27b,
     type: 2}
   m_PrefabInternal: {fileID: 176031251}
+--- !u!1 &1970908423 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1659490423511810, guid: 0edf7027c92f1364a87d720bee41f27b,
+    type: 2}
+  m_PrefabInternal: {fileID: 176031251}
+--- !u!114 &1970908424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1970908423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a224a04a19102644b6d0d6d9804067f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
