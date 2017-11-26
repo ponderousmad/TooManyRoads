@@ -8,7 +8,8 @@ public class TileController : MonoBehaviour {
     public GameObject gameScene;
 
     public float scrollValue = 0.0f;
-    public float scrollSpeed = 1.0f;
+    public float scrollSpeed = 0.0f;
+    public float timeUntilIncrease = 10.0f;
     public float timeBetweenIncreases = 30.0f;
     public float scrollSpeedIncrease = 1.0f;
 
@@ -52,10 +53,11 @@ public class TileController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         scrollTimer += Time.deltaTime;
-        if(scrollTimer > timeBetweenIncreases)
+        if(scrollTimer > timeUntilIncrease)
         {
             scrollSpeed += scrollSpeedIncrease;
-            scrollTimer -= timeBetweenIncreases;
+            scrollTimer -= timeUntilIncrease;
+            timeUntilIncrease = timeBetweenIncreases;
         }
 
         scrollValue += scrollSpeed * Time.deltaTime;
