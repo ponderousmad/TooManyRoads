@@ -7,7 +7,6 @@ public class PlayerSpawner : MonoBehaviour {
 	public int playerId;
 
 	private bool spawn = false;
-	private PlayerSettings settings;
 
     public Camera camera;
     private GameObject player;
@@ -17,7 +16,6 @@ public class PlayerSpawner : MonoBehaviour {
 		string playerConfig = PlayerPrefs.GetString ("Player" + playerId, "");
 		if (playerConfig.CompareTo("") != 0) {
 			spawn = true;
-			settings = JsonUtility.FromJson<PlayerSettings> (playerConfig);
 		}
 	}
 
@@ -59,11 +57,11 @@ public class PlayerSpawner : MonoBehaviour {
         if(bestSpawn != null)
         {
             player = Instantiate(playerPrefab, bestSpawn.transform.position, Quaternion.identity);
-            Destroy(bestSpawn);
             //MeshRenderer playerRenderer = player.GetComponent<MeshRenderer> ();
             //playerRenderer.material.color = settings.tint;
 
             player.GetComponent<Player>().SetID(playerId);
+			Destroy(bestSpawn);
         }
     }
 }
