@@ -7,6 +7,7 @@ public class DamageController : MonoBehaviour {
 	public float health;
 	public AudioClip hurtSound;
 	public AudioClip deathSound;
+    public GameObject deathEffect;
 
 	private float mCurrentHealth;
 	private bool mDead;
@@ -45,6 +46,11 @@ public class DamageController : MonoBehaviour {
 	void Die()
 	{
 		mDead = true;
+        if(deathEffect)
+        {
+            var effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            effect.transform.localScale = transform.localScale;
+        }
 		//Debug.Log ("I died!");
         Destroy(this.gameObject);
 	}
