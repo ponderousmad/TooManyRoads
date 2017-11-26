@@ -83,7 +83,16 @@ public class Player : MonoBehaviour {
 	}
 
 	public void SendDeath(){
-		mGod.OnPlayerDied (mPlayerID);
+		if (mGod == null) {
+			TryGetGod ();
+		}
+		if (mGod != null) {
+			mGod.OnPlayerDied (mPlayerID);
+		}
+	}
+
+	public void TryGetGod() {
+		mGod = FindObjectOfType<GameGod> ();
 	}
 
 	public PlayerInput Input { get { return mInput; } }

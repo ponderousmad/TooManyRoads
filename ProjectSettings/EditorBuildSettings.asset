@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChoosePlayer.unity
     guid: 998dbc7cc547faf49a306a1ac4653b95
-  - enabled: 0
-    path: Assets/Scenes/GameScene.unity
-    guid: 19e6a9270359b1e4981e471e490efed3
   - enabled: 1
     path: Assets/Scenes/Scrolling.unity
     guid: ab6ab14735d118e42891b9aabd29de69
+  - enabled: 1
+    path: Assets/Scenes/NoblelestScene.unity
+    guid: 4d40b927e91450a4a889594740d85b07

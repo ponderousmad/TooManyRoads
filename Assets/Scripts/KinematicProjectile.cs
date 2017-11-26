@@ -20,7 +20,9 @@ public class KinematicProjectile : MonoBehaviour {
 		Vector2 pos2D = new Vector2 (transform.position.x, transform.position.y);
 		RaycastHit2D result = Physics2D.Raycast(pos2D, mVelocity, mVelocity.magnitude * Time.deltaTime);
 		Collider2D hitObject = result.collider;
-		if (hitObject == null || hitObject.gameObject == mInstigator) {
+		if (hitObject == null || 
+			hitObject.gameObject == mInstigator ||
+			hitObject.isTrigger) {
 			transform.position = transform.position + new Vector3(mVelocity.x, mVelocity.y, 0) * Time.deltaTime;
 		} else {
 			CollisionResponse cr = this.gameObject.GetComponent<CollisionResponse>();

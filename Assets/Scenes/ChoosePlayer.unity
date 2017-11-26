@@ -721,6 +721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 391392836}
   - component: {fileID: 391392837}
+  - component: {fileID: 391392835}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -728,6 +729,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &391392835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 391392834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc8145c8cdfccc418d1eaa743c9a653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameScene: Scrolling
+  noblelestSpiritScene: NoblelestScene
+  nextGameTime: 3
 --- !u!4 &391392836
 Transform:
   m_ObjectHideFlags: 0

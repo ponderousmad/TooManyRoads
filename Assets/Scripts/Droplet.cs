@@ -45,7 +45,7 @@ public class Droplet : MonoBehaviour {
 			}
 		}
 			
-		BroadcastMessage("Collision", collider.collider);
+		BroadcastMessage("Collision", collider.collider, UnityEngine.SendMessageOptions.DontRequireReceiver);
 
 		Destroy (this.gameObject);
 	}
