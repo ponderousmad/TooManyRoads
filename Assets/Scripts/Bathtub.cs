@@ -58,6 +58,9 @@ public class Bathtub : MonoBehaviour {
 			if (k != null) {
 				k.SetInstigator (gameObject);
 				k.EnableGravity (true);
+			} else {
+				Collider2D c = p.GetComponent<Collider2D> ();
+				Physics2D.IgnoreCollision (gameObject.GetComponent<Collider2D> (), c);
 			}
 			Embiggener e = p.GetComponent<Embiggener> ();
 			if (e != null) {
