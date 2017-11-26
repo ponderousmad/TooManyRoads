@@ -65,8 +65,6 @@ public class PlayerSpawner : MonoBehaviour {
             player = Instantiate(playerPrefab, bestSpawn.transform.position, Quaternion.identity);
             Debug.Log("Spawned Player:");
             Debug.Log(player);
-            //MeshRenderer playerRenderer = player.GetComponent<MeshRenderer> ();
-            //playerRenderer.material.color = settings.tint;
 
             player.GetComponent<Player>().SetID(playerId);
 			Destroy(bestSpawn);

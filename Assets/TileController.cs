@@ -5,7 +5,9 @@ using UnityEngine;
 public class TileController : MonoBehaviour {
 
     public Transform gameCamera;
-    public GameObject gameScene;
+    public GameObject firstScene;
+    public GameObject secondScene;
+    public GameObject[] gameScenes;
 
     public float scrollValue = 0.0f;
     public float scrollSpeed = 0.0f;
@@ -20,7 +22,7 @@ public class TileController : MonoBehaviour {
     GameObject nextScene;
     int sceneCount = 0;
 
-    private void CreateNewScene()
+    private void CreateNewScene(GameObject gameScene)
     {
         if(prevScene)
         {
@@ -40,14 +42,14 @@ public class TileController : MonoBehaviour {
             return;
         }
 
-        if(gameScene == null)
+        if(firstScene == null || secondScene == null || gameScenes.Length == 0)
         {
             gameObject.SetActive(false);
             return;
         }
 
-        CreateNewScene();
-        CreateNewScene();
+        CreateNewScene(firstScene);
+        CreateNewScene(secondScene);
 	}
 	
 	// Update is called once per frame
@@ -66,7 +68,7 @@ public class TileController : MonoBehaviour {
 
         if(scrollValue > ((sceneCount-1) * 38.0f))
         {
-            CreateNewScene();
+            CreateNewScene(gameScenes[Random.Range(0, gameScenes.Length - 1)]);
         }
 	}
 }

@@ -10,6 +10,7 @@ TagManager:
   - Spawn3
   - Spawn4
   - Visuals
+  - Fallback
   layers:
   - Default
   - TransparentFX

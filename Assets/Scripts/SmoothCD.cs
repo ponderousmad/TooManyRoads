@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class SmoothCD {
 
     public float currentValue = 0.0f;
