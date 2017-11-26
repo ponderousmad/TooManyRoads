@@ -14,6 +14,23 @@ public class TileController : MonoBehaviour {
 
     private float scrollTimer = 0.0f;
 
+    GameObject prevScene;
+    GameObject currentScene;
+    GameObject nextScene;
+    int sceneCount = 0;
+
+    private void CreateNewScene()
+    {
+        if(prevScene)
+        {
+            Destroy(prevScene);
+        }
+        prevScene = currentScene;
+        currentScene = nextScene;
+        nextScene = Instantiate(gameScene, new Vector3(sceneCount * 38.0f, 0.0f), Quaternion.identity);
+        ++sceneCount;
+    }
+
 	// Use this for initialization
 	void Start () {
         if(gameCamera == null)
@@ -28,19 +45,8 @@ public class TileController : MonoBehaviour {
             return;
         }
 
-        GameObject newScene = Instantiate(gameScene);
-        if(newScene == null)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
-        GameObject secondScene = Instantiate(gameScene, new Vector3(38.0f, 0.0f, 0.0f), Quaternion.identity);
-        if(secondScene == null)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
+        CreateNewScene();
+        CreateNewScene();
 	}
 	
 	// Update is called once per frame
@@ -55,5 +61,10 @@ public class TileController : MonoBehaviour {
         scrollValue += scrollSpeed * Time.deltaTime;
         int scrollPixels = Mathf.RoundToInt(scrollValue * 96.0f);
         gameCamera.position = new Vector3(scrollPixels / 96.0f, gameCamera.position.y, gameCamera.position.z);
+
+        if(scrollValue > ((sceneCount-1) * 38.0f))
+        {
+            CreateNewScene();
+        }
 	}
 }
