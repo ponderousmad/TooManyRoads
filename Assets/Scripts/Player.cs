@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 
 	private PlayerInput mInput;
     private int mPlayerID = 0;
+	private PlayerSettings settings;
 
     [ContextMenu ("ExportInputDefintions")]
     public void ExportInputDefinitions()
@@ -21,30 +22,27 @@ public class Player : MonoBehaviour {
     {
         Debug.Log("Setting player ID to: " + mPlayerID.ToString());
         mPlayerID = id;
-		mInput = new PlayerInput(mPlayerID, mUseOneStickMode);
+		mInput = new PlayerInput(mPlayerID + 1, mUseOneStickMode);
 
         PhysCharacterController controller = GetComponent<PhysCharacterController>();
         controller.SetPlayerInput(mInput);
+
+		string playerConfig = PlayerPrefs.GetString ("Player" + mPlayerID, "");
+		if (playerConfig.CompareTo("") != 0) {
+			settings = JsonUtility.FromJson<PlayerSettings> (playerConfig);
+			TryUseSettings ();
+		}
+
+		foreach(var shooter in GetComponentsInChildren<ProjectileShooter>())
+		{
+			shooter.SetInput(mInput);
+		}
     }
-
-	// Use this for initialization
-	void Start () {
-        if(mPlayerID == 0)
-        {
-            Debug.Log("Using default player ID.");
-            SetID(1);
-        }
-
-        foreach(var shooter in GetComponentsInChildren<ProjectileShooter>())
-        {
-            shooter.SetInput(mInput);
-        }
-	}
 	
 	// Update is called once per frame
 	void Update () {
         bool debugInput = false;
-        if(debugInput)
+		if(debugInput && mInput != null)
         {
             mInput.Aim(false);
             Debug.Log("Move: " + mInput.MoveX.ToString() + ", " + mInput.MoveY.ToString());
@@ -54,4 +52,18 @@ public class Player : MonoBehaviour {
 	}
 
 	public PlayerInput Input { get { return mInput; } }
+
+	void TryUseSettings() {
+		for (int i = 0; i < transform.childCount; ++i) {
+			Transform child = transform.GetChild (i);
+			if (child.gameObject && child.gameObject.CompareTag ("Visuals")) {
+				MeshRenderer renderer = child.GetComponent<MeshRenderer> ();
+				if (renderer) {
+					renderer.material.SetColor ("_Color", settings.tint);
+					renderer.material.SetColor ("_Accent", settings.stripe);
+					renderer.material.SetTexture ("_MainTex", settings.pattern.texture);
+				}
+			}
+		}
+	}
 }
