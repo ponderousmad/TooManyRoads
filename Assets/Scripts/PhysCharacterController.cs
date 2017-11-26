@@ -155,8 +155,8 @@ public class PhysCharacterController : MonoBehaviour {
                 playerAnimator.SetLayerWeight(1, 0.0f);
             } else
             {
-                playerAnimator.SetLayerWeight(2, 0.3f);
-                playerAnimator.SetLayerWeight(1, 0.6f);
+                playerAnimator.SetLayerWeight(2, 0.6f);
+                playerAnimator.SetLayerWeight(1, 0.3f);
             }
             playerAnimator.SetInteger("Vertical", 1);
         } else if(aim.y < 0.0f)
