@@ -1659,7 +1659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   hurtSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: f4fbc506c70ef4d6f8a7d79d5f6e0914, type: 3}
   deathEffect: {fileID: 1597161252530732, guid: 11b79c261f6cf479eaf659e05ab10ae8,
     type: 2}
   invulnerableTime: 3
