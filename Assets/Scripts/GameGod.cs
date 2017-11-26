@@ -27,6 +27,7 @@ public class GameGod : MonoBehaviour {
 	private PlayerData [] trackers;
 	private int frameDelay = 2;
 	private int currentDelay = 0;
+	private bool useOnePlayerHack = false;
 	private float timeToNextScene = -1.0f;
 
 	// Use this for initialization
@@ -75,6 +76,11 @@ public class GameGod : MonoBehaviour {
 			trackers [i] = new PlayerData ();
 			trackers[i].playerId = players[i].GetId();
 		}
+
+		if (trackers.Length == 1) {
+			useOnePlayerHack = true;
+		}
+
 		needsToTrackPlayers = false;
 	}
 
@@ -96,23 +102,30 @@ public class GameGod : MonoBehaviour {
 			}			
 		}
 
-		int aliveCount = 0;
+		int deadCount = 0;
 		int aliveId = -1;
 		for (int i = 0; i < trackers.Length; ++i) {
-			if (trackers [i].remainingLives > 0) {
-				aliveCount++;
+			if (trackers [i].remainingLives == 0) {
+				deadCount++;
+			} else {
 				aliveId = i;
 			}
 		}
 
-		if (aliveCount == 1) {
-			trackers [aliveId].score++;
-			if (trackers [aliveId].score == MAX_SCORE) {
-				winnerId = aliveId;
+		if (useOnePlayerHack) {
+			if (trackers[0].remainingLives == 0) {
+				winnerId = 0;
 				SceneManager.LoadSceneAsync (noblelestSpiritScene);
-			} else {
-				Time.timeScale = 0.0f;
-				timeToNextScene = nextGameTime;
+			}
+		} else {
+			if (deadCount >= (trackers.Length - 1)) {
+				trackers [aliveId].score++;
+				if (trackers [aliveId].score == MAX_SCORE) {
+					winnerId = aliveId;
+					SceneManager.LoadSceneAsync (noblelestSpiritScene);
+				} else {
+					timeToNextScene = nextGameTime;
+				}
 			}
 		}
 	}
