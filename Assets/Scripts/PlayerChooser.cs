@@ -17,7 +17,7 @@ public class PlayerInfo {
 }
 
 public class PlayerChooser : MonoBehaviour {
-	const int MAX_PLAYERS = 4;
+	const int MAX_PLAYERS = 1;
 
 	public string mainSceneName;
 	public int minPlayers = 1;
@@ -64,7 +64,7 @@ public class PlayerChooser : MonoBehaviour {
 			}
 
 			// Start the game check
-			if (players[i].input.Jump && currentPlayers >= minPlayers) {
+			if (players[i].input.MenuPress && currentPlayers >= minPlayers) {
 				StartGame ();
 			}
 		}

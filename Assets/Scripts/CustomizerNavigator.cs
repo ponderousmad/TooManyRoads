@@ -10,6 +10,7 @@ public class CustomizerNavigator : MonoBehaviour {
 
 	public Color[] colors;
 	public Sprite[] patterns;
+	public GameObject highlight;
 	public bool startSelected;
 	public bool isStripe;
 
@@ -17,6 +18,7 @@ public class CustomizerNavigator : MonoBehaviour {
 	private PlayerInfo playerRef;
 	private int chosenOption = 0;
 	private bool moved = false;
+	private bool movedUp = false;
 	private bool selected = false;
 
 	void Start () {
@@ -31,38 +33,52 @@ public class CustomizerNavigator : MonoBehaviour {
 
 		if (startSelected) {
 			Highlight ();
+		} else {
+			UnHighlight ();
 		}
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (playerRef.isActive && selected) {
-			if (!moved) {
-				if (playerRef.input.MenuLeft) {
+			if (playerRef.input.MenuLeft) {
+				if (!moved) {
 					ChooseNext (-1);
-				} else if (playerRef.input.MenuRight) {
-					ChooseNext (1);
-				} else {
-					moved = false;
 				}
+			} else if (playerRef.input.MenuRight) {
+				if (!moved) {
+					ChooseNext (1);
+				}
+			} else {
+				moved = false;
 			}
 
-			if (playerRef.input.MenuUp) {
-				SelectNextCustomizer (-1);
-			} else if (playerRef.input.MenuDown) {
-				SelectNextCustomizer (1);
+			if (!movedUp) {
+				if (playerRef.input.MenuUp) {
+					if (!movedUp) {
+						SelectNextCustomizer (-1);
+					}
+				} else if (playerRef.input.MenuDown) {
+					if (!movedUp) {
+						SelectNextCustomizer (1);
+					}
+				} else {
+					movedUp = false;
+				}
 			}
 		}
 	}
 
 	void Highlight () {
 		selected = true;
-		// Do something else
+		movedUp = true;
+		moved = true;
+		highlight.SetActive (true);
 	}
 
 	void UnHighlight () {
 		selected = false;
-		// Do something else
+		highlight.SetActive (false);
 	}
 
 	void ChooseNext (int direction) {
@@ -113,6 +129,7 @@ public class CustomizerNavigator : MonoBehaviour {
 	}
 
 	public void SelectNextCustomizer (int direction) {
+		movedUp = true;
 		if (direction > 0) {
 			nextCustomizer.Highlight ();
 		} else {
