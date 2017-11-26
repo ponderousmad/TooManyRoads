@@ -54,6 +54,8 @@ GameObject:
   - component: {fileID: 212433601182072488}
   - component: {fileID: 114245882764842108}
   - component: {fileID: 61165200089185686}
+  - component: {fileID: 114701727386668460}
+  - component: {fileID: 114270583090476666}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Mover
@@ -83,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1354443177151224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4504129954096904}
@@ -109,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1581838887213854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 0.44, y: -1.23, z: -0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4141548356610686}
@@ -182,9 +184,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {fileID: 4713218113666650}
   endPosition: {fileID: 4212644304655332}
-  movementSpeed: 1.5
-  currentPosition: 1
+  movementSpeed: 2
+  currentPosition: 0
   movingForward: 1
+  pingPong: 1
+--- !u!114 &114270583090476666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354443177151224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d56b5765053e7469a1af99770d40a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScale: {x: 0.1, y: 1, z: 1}
+  maxScale: {x: 1.5, y: 1, z: 1}
+  scaleRate: 1
+  initialScaleLerp: 0.71
+  restoreRate: 0.1
+  restoreDelay: 1
+  scalingAffectsMass: 1
+--- !u!114 &114701727386668460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354443177151224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d56b5765053e7469a1af99770d40a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScale: {x: 0.1, y: 1, z: 1}
+  maxScale: {x: 1.5, y: 1, z: 1}
+  scaleRate: 1
+  initialScaleLerp: 0.71
+  restoreRate: 0.1
+  restoreDelay: 1
+  scalingAffectsMass: 1
 --- !u!114 &114784960416927254
 MonoBehaviour:
   m_ObjectHideFlags: 1

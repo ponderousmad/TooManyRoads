@@ -151,6 +151,46 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224700491198639648, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 955
+      objectReference: {fileID: 0}
+    - target: {fileID: 224700491198639648, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 535
+      objectReference: {fileID: 0}
+    - target: {fileID: 224384415862693740, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -955
+      objectReference: {fileID: 0}
+    - target: {fileID: 224384415862693740, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 535
+      objectReference: {fileID: 0}
+    - target: {fileID: 224295594826166086, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 955
+      objectReference: {fileID: 0}
+    - target: {fileID: 224295594826166086, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -535
+      objectReference: {fileID: 0}
+    - target: {fileID: 224154456583687104, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -955
+      objectReference: {fileID: 0}
+    - target: {fileID: 224154456583687104, guid: 0edf7027c92f1364a87d720bee41f27b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -535
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0edf7027c92f1364a87d720bee41f27b, type: 2}
   m_IsPrefabParent: 0
@@ -195,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 1636856738}
-  gameScene: {fileID: 1963681173217576, guid: 8813ef9690ec19b4b9a5f0410083a714, type: 2}
+  gameScene: {fileID: 1154686165225608, guid: e130cdcd1e3069145ac4948ef2a73dad, type: 2}
   scrollValue: 0
   scrollSpeed: 0
   timeUntilIncrease: 5
