@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   embiggenAmount: 0.2
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 1eac3db8c36f31f48b5cddeb85fedbef, type: 3}
 --- !u!114 &114714412062953968
 MonoBehaviour:
   m_ObjectHideFlags: 1

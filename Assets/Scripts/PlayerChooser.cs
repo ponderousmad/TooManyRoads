@@ -71,7 +71,7 @@ public class PlayerChooser : MonoBehaviour {
 			}
 
 			// Start the game check
-			if (players[i].input.MenuPress && currentPlayers >= minPlayers) {
+			if (players[i].input.MenuPress && players[i].isActive && currentPlayers >= minPlayers) {
 				StartGame ();
 			}
 		}
