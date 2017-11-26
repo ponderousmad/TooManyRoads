@@ -5,6 +5,7 @@ using UnityEngine;
 public class EmbiggeningCollider : CollisionResponse {
 
 	public float embiggenAmount = 0.1f;
+    public AudioClip sound;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,15 @@ public class EmbiggeningCollider : CollisionResponse {
 		Embiggener embiggener = other.GetComponent<Embiggener>();
 		if(embiggener != null) 
 		{
-			embiggener.Embiggen(embiggenAmount);
+			if(embiggener.Embiggen(embiggenAmount))
+            {
+                Debug.Log("Embigged: " + embiggenAmount);
+                if(sound)
+                {
+                    Debug.Log("Played sound");
+                    AudioSource.PlayClipAtPoint(sound, transform.position, 1.0f);
+                }
+            }
 		}
 	}
 }
