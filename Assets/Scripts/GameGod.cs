@@ -16,12 +16,13 @@ public class PlayerData {
 }
 
 public class GameGod : MonoBehaviour {
+	public string tutorialScene;
 	public string gameScene;
 	public string noblelestSpiritScene;
 	public float nextGameTime = 3.0f;
 
 	private int winnerId = 0;
-	private int MAX_SCORE = 3;
+	private int MAX_SCORE = 1;
 	private bool needsToSetWinner = false;
 	private bool needsToTrackPlayers = false;
 	private PlayerData [] trackers;
@@ -30,6 +31,7 @@ public class GameGod : MonoBehaviour {
 	private bool useOnePlayerHack = false;
 	private float timeToNextScene = -1.0f;
 	private bool firstRun = true;
+	private bool firstWin = true;
 
 	// Use this for initialization
 	void Start () {
@@ -49,13 +51,18 @@ public class GameGod : MonoBehaviour {
 		if (timeToNextScene > 0.0f) {
 			timeToNextScene -= Time.deltaTime;
 			if (timeToNextScene <= 0.0f) {
-				SceneManager.LoadScene (gameScene);
+				if (firstWin) {
+					SceneManager.LoadScene (tutorialScene);
+					firstWin = false;
+				} else {
+					SceneManager.LoadScene (gameScene);
+				}
 			}
 		}
 	}
 	
 	void OnSceneLoaded (Scene scene, LoadSceneMode mode) {
-		if (scene.name.CompareTo(gameScene) == 0) {
+		if (scene.name.CompareTo(gameScene) == 0 || scene.name.CompareTo(tutorialScene) == 0) {
 			needsToTrackPlayers = true;
 			currentDelay = 0;
 		} else if (scene.name.CompareTo(noblelestSpiritScene) == 0) {
