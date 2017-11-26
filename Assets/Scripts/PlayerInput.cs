@@ -183,9 +183,9 @@ public class PlayerInput {
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton:
-    positiveButton: joystick button {1}
+    positiveButton: joystick {1} button {2}
     altNegativeButton:
-    altPositiveButton: {2}
+    altPositiveButton: {3}
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -193,7 +193,7 @@ public class PlayerInput {
     invert: 0
     type: 0
     axis: 0
-    joyNum: {3}", buttonName, buttonNumber, key, player);
+    joyNum: {1}", buttonName, player, buttonNumber, key);
 	}
 
 	static IEnumerable<string> ControllerDefinition(int player, RuntimePlatform platform)

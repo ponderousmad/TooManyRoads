@@ -114,6 +114,9 @@ public class PhysCharacterController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		if (playerInput == null) {
+			return;
+		}
 		Vector2 moveForce = rigidBody.velocity;
 		float forward = playerInput.MoveX * movementSpeed;
 

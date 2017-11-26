@@ -29,6 +29,7 @@ public class GameGod : MonoBehaviour {
 	private int currentDelay = 0;
 	private bool useOnePlayerHack = false;
 	private float timeToNextScene = -1.0f;
+	private bool firstRun = true;
 
 	// Use this for initialization
 	void Start () {
@@ -69,11 +70,17 @@ public class GameGod : MonoBehaviour {
 		}
 
 		Player[] players = FindObjectsOfType<Player> ();
-		trackers = new PlayerData[players.Length];
+
+		if (firstRun) {
+			trackers = new PlayerData[players.Length];
+		}
 
 		for (int i = 0; i < players.Length; ++i) {
 			players [i].SetGod (this);
-			trackers [i] = new PlayerData ();
+
+			if (firstRun) {
+				trackers [i] = new PlayerData ();
+			}
 			trackers[i].playerId = players[i].GetId();
 		}
 
@@ -81,6 +88,7 @@ public class GameGod : MonoBehaviour {
 			useOnePlayerHack = true;
 		}
 
+		firstRun = false;
 		needsToTrackPlayers = false;
 	}
 
