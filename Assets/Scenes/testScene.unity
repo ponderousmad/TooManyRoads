@@ -646,65 +646,40 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4031417300720496, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128, type: 2}
+    - target: {fileID: 4155858951388014, guid: f034f5b6c7ffc44589269c8c7fbade79, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.05
       objectReference: {fileID: 0}
-    - target: {fileID: 4031417300720496, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128, type: 2}
+    - target: {fileID: 4155858951388014, guid: f034f5b6c7ffc44589269c8c7fbade79, type: 2}
       propertyPath: m_LocalPosition.y
       value: 4.73
       objectReference: {fileID: 0}
-    - target: {fileID: 4031417300720496, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128, type: 2}
+    - target: {fileID: 4155858951388014, guid: f034f5b6c7ffc44589269c8c7fbade79, type: 2}
       propertyPath: m_LocalPosition.z
       value: -0.05250247
       objectReference: {fileID: 0}
-    - target: {fileID: 4031417300720496, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128, type: 2}
+    - target: {fileID: 4155858951388014, guid: f034f5b6c7ffc44589269c8c7fbade79, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4031417300720496, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128, type: 2}
+    - target: {fileID: 4155858951388014, guid: f034f5b6c7ffc44589269c8c7fbade79, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4031417300720496, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128, type: 2}
+    - target: {fileID: 4155858951388014, guid: f034f5b6c7ffc44589269c8c7fbade79, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4031417300720496, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128, type: 2}
+    - target: {fileID: 4155858951388014, guid: f034f5b6c7ffc44589269c8c7fbade79, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4031417300720496, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128, type: 2}
+    - target: {fileID: 4155858951388014, guid: f034f5b6c7ffc44589269c8c7fbade79, type: 2}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1862777701223598, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128, type: 2}
-      propertyPath: m_Name
-      value: DebigulatorBathtub
-      objectReference: {fileID: 0}
-    - target: {fileID: 212147671511880530, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.4638841
-      objectReference: {fileID: 0}
-    - target: {fileID: 212147671511880530, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.7110951
-      objectReference: {fileID: 0}
-    - target: {fileID: 212147671511880530, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.9558824
-      objectReference: {fileID: 0}
-    - target: {fileID: 114581182682946816, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128,
-        type: 2}
-      propertyPath: fluidProjectileType
-      value: 
-      objectReference: {fileID: 1442003381833664, guid: 0616a85b20f394a08b8e6389a385e7f3,
-        type: 2}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: dcb2bdae7fdfa47e0b8bfc0f3d097128, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: f034f5b6c7ffc44589269c8c7fbade79, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1708409959
 GameObject:

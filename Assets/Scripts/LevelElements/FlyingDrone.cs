@@ -17,9 +17,9 @@ public class FlyingDrone : MonoBehaviour {
 
     private void randomizeDirection(Vector2 hitNormal)
     {
-     //   float baseAngle = Vector2.Angle(hitNormal, Vector2.right);
-      //  float randomAngle = Random.Range(baseAngle - Mathf.PI / 4, baseAngle + Mathf.PI / 4);
-      //   forceDirection = new Vector2(Mathf.Cos(randomAngle), Mathf.Sin(randomAngle));
+       float baseAngle = Vector2.Angle(hitNormal, Vector2.right);
+       float randomAngle = Random.Range(baseAngle - Mathf.PI / 2, baseAngle + Mathf.PI / 2);
+       forceDirection = new Vector2(Mathf.Cos(randomAngle), Mathf.Sin(randomAngle));
 
         forceDirection = hitNormal;
     }
@@ -33,7 +33,7 @@ public class FlyingDrone : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () { 
         this.GetComponent<Rigidbody2D>().AddForce(forceDirection * forwardForce * Time.deltaTime);
-        this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(forceDirection.y, forceDirection.x) * Mathf.Rad2Deg);
+        this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(forceDirection.y, forceDirection.x) * Mathf.Rad2Deg + 180);
 	}
 
    /* void OnCollisionEnter2D(Collision2D collider)
