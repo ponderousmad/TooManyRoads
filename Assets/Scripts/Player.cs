@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     private int mPlayerID = 0;
 	private PlayerSettings settings;
 	private bool wentToChooseLevel;
+	private GameGod mGod;
 
 	private AudioSource audioSource;
 	public AudioClip jump;
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour {
 
 		DamageController dm = GetComponent<DamageController> ();
 		dm.SetAudioSource (audioSource);
+		dm.SetPlayer (this);
 
 		string playerConfig = PlayerPrefs.GetString ("Player" + mPlayerID, "");
 		if (playerConfig.CompareTo("") != 0) {
@@ -59,7 +61,15 @@ public class Player : MonoBehaviour {
 			TryUseSettings ();
 		}
     }
-	
+
+	public int GetId() {
+		return(mPlayerID);
+	}
+
+	public void SetGod(GameGod god) {
+		mGod = god;
+	}
+
 	// Update is called once per frame
 	void Update () {
         bool debugInput = false;
@@ -70,6 +80,10 @@ public class Player : MonoBehaviour {
             Debug.Log("Fire Embiggen: " + mInput.FireEmbiggen.ToString());
             Debug.Log("Fire Debigulate: " + mInput.FireDebigulate.ToString());
         }
+	}
+
+	public void SendDeath(){
+		mGod.OnPlayerDied (mPlayerID);
 	}
 
 	public PlayerInput Input { get { return mInput; } }

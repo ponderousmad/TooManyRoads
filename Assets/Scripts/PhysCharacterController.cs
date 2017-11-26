@@ -54,8 +54,6 @@ public class PhysCharacterController : MonoBehaviour {
 		jumpCount = 0;
 		rigidBody = GetComponent<Rigidbody2D> ();
 		lastDir = 0.0f;
-
-        GameRules.OnGameOver += StopMoving;
 	}
 
     public void SetPlayerInput(PlayerInput input)
@@ -157,13 +155,13 @@ public class PhysCharacterController : MonoBehaviour {
                 playerAnimator.SetLayerWeight(1, 0.0f);
             } else
             {
-                playerAnimator.SetLayerWeight(2, 0.5f);
-                playerAnimator.SetLayerWeight(1, 0.5f);
+                playerAnimator.SetLayerWeight(2, 0.3f);
+                playerAnimator.SetLayerWeight(1, 0.6f);
             }
             playerAnimator.SetInteger("Vertical", 1);
         } else if(aim.y < 0.0f)
         {
-            if(aim.x < 0.0f)
+            if(aim.x == 0.0f)
             {
                 playerAnimator.SetLayerWeight(2, 1.0f);
                 playerAnimator.SetLayerWeight(1, 0.0f);
