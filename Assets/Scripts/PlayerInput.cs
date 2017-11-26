@@ -140,9 +140,9 @@ public class PlayerInput {
     positiveButton: {2}
     altNegativeButton: {3}
     altPositiveButton: {4}
-    gravity: 1000
+    gravity: 10000
     dead: 0.001
-    sensitivity: 3
+    sensitivity: 100
     snap: 1
     invert: 0
     type: 0
@@ -201,7 +201,7 @@ public class PlayerInput {
 		if(player==1)
         {
             yield return KeyboardAxisInput(Axis.MoveX, player, platform, "a", "d");
-            yield return KeyboardAxisInput(Axis.MoveY, player, platform, "w", "s", "", "space");
+            yield return KeyboardAxisInput(Axis.MoveY, player, platform, "s", "w", "", "space");
             yield return KeyboardAxisInput(Axis.AimX, player, platform, "left", "right");
             yield return KeyboardAxisInput(Axis.AimY, player, platform, "down", "up");
             yield return KeyboardAxisInput(Axis.Embiggen, player, platform, "", "e");
