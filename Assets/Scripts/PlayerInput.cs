@@ -332,4 +332,6 @@ public class PlayerInput {
 
     public bool MenuLeft { get { return AnalogToDigital(-MoveX, menuThreshold, ref menuLeft); } }
     public bool MenuRight { get { return AnalogToDigital(MoveX, menuThreshold, ref menuRight); } }
+
+    public float LastMoveDirection { get { return(lastMoveDirection); } }
 }
