@@ -12,9 +12,14 @@ public class PlayerInput {
 	private string fireEmbiggen;
 	private string fireDebigulate;
 
+    private string pressButton;
+    private string jumpButton;
+
 	private float aimAxisDeadzone = 0.5f;
 	private float jumpThreshold = 0.5f;
     private float fireThreshold = 0.5f;
+
+    private bool jumpActive = false;
 
 	enum Axis
 	{
@@ -30,13 +35,14 @@ public class PlayerInput {
 	{
 		Embiggen = 0,
 		Debigulate = 1,
-        Press = 2
+        Press = 2,
+        Jump = 3
 	}
 
 	private static int[] WindowsAxisNames = { 0, 1, 3, 4, 8, 9 };
-	private static int[] WindowsButtonNumbers = { 7, 6, 0 };
+	private static int[] WindowsButtonNumbers = { 7, 6, 0, 0 };
 	private static int[] OSXAxisNames = { 0, 1, 2, 3, 4, 5 };
-	private static int[] OSXButtonNumbers = { 7, 6, 16 };
+	private static int[] OSXButtonNumbers = { 7, 6, 1, 1 };
 
 	private static string PlatformName(RuntimePlatform platform)
 	{
@@ -196,6 +202,7 @@ public class PlayerInput {
         yield return ButtonAxisInput(Button.Embiggen, player, platform);
         yield return ButtonAxisInput(Button.Debigulate, player, platform);
         yield return ButtonInput(Button.Press, player, platform, "space");
+        yield return ButtonInput(Button.Jump, player, platform, "space");
 	}
 
 	public static string AllDefinitions()
@@ -224,11 +231,13 @@ public class PlayerInput {
 
 		fireEmbiggen = Button.Embiggen.ToString() + postfix;
 		fireDebigulate = Button.Debigulate.ToString() + postfix;
+
+        pressButton = Button.Press.ToString() + postfix;
+        jumpButton = Button.Jump.ToString() + postfix;
 	}
 
 	private float GetAxis(string axis) {
         float value = Input.GetAxisRaw(axis);
-        Debug.Log("Getting " + axis + " = " + value.ToString());
         return value;
     }
 	private bool HasAim(float value) { return Mathf.Abs(value) > aimAxisDeadzone; }
@@ -254,12 +263,19 @@ public class PlayerInput {
 	public float MoveX { get { return GetAxis(moveAxisX); } }
 	public float MoveY { get { return GetAxis(moveAxisY); } }
 
-	public bool Jump { get { return MoveY > jumpThreshold; } }
+	public bool Jump {
+        get
+        {
+            bool wasJump = jumpActive;
+            jumpActive = MoveY > 0.5f;
+            return Input.GetButtonDown(jumpButton) || (jumpActive && !wasJump);
+        }
+    }
 
 	public bool FireEmbiggen { get { return GetAxis(fireEmbiggen) > fireThreshold; } }
 	public bool FireDebigulate { get { return GetAxis(fireDebigulate) > fireThreshold; } }
 
-    public bool MenuPress { get { return false; } }
+    public bool MenuPress { get { return Input.GetButtonDown(pressButton); } }
 
     public bool MenuUp { get { return MoveY < 0; } }
     public bool MenuDown { get { return MoveY > 0; } }
