@@ -62,7 +62,10 @@ public class Player : MonoBehaviour {
 				if (renderer) {
 					renderer.material.SetColor ("_Color", settings.tint);
 					renderer.material.SetColor ("_Accent", settings.stripe);
-					renderer.material.SetTexture ("_MainTex", settings.pattern.texture);
+                    if(settings.pattern)
+                    {
+					    renderer.material.SetTexture ("_MainTex", settings.pattern.texture);
+                    }
 				}
 			}
 		}

@@ -17,4 +17,5 @@ public abstract class AmmoController : MonoBehaviour {
 	public abstract bool HasAmmo (float amount);
 	public abstract void UseAmmo (float amount);
 	public abstract float GetAmmo();
+    public abstract float PowerLevel();
 }

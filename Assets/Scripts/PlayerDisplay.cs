@@ -8,7 +8,7 @@ public class PlayerDisplay : MonoBehaviour {
     public GameObject[] lives = new GameObject[3];
     public Image powerBar;
 
-    private float powerLevel = 1;
+    public AmmoController ammoController;
 
 	// Use this for initialization
 	void Start () {
@@ -16,11 +16,9 @@ public class PlayerDisplay : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        powerLevel -= Time.deltaTime;
-		SetPowerLevel(powerLevel);
-        if(powerLevel < 0.2)
+        if(ammoController)
         {
-            RemoveLife(0);
+            SetPowerLevel(ammoController.PowerLevel());
         }
 	}
 

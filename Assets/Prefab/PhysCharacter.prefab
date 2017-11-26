@@ -264,8 +264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e63e598dd934a5a984f9fae00b7f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useOneStickMode: 0
-  useLastMove: 0
+  useOneStickMode: 1
+  useLastMove: 1
 --- !u!114 &114797947526129932
 MonoBehaviour:
   m_ObjectHideFlags: 1

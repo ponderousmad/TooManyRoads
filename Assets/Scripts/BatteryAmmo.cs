@@ -40,4 +40,9 @@ public class BatteryAmmo : AmmoController {
 	{
 		return(mCurrentAmmo);
 	}
+
+    public override float PowerLevel()
+    {
+        return(mCurrentAmmo / maxAmmo);
+    }
 }
