@@ -6110,6 +6110,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cb8ef242a0b7db24cbc828d8272b1d3f, type: 2}
+    - target: {fileID: 114613097888675052, guid: 4ff9e9dcd4e6833479e6dd23a8069968,
+        type: 2}
+      propertyPath: mUseOneStickMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ff9e9dcd4e6833479e6dd23a8069968, type: 2}
   m_IsPrefabParent: 0

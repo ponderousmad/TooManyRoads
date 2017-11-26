@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput {
+	private bool useOneStickMode = false;
 
 	private string moveAxisX;
 	private string moveAxisY;
@@ -226,7 +227,7 @@ public class PlayerInput {
 		return definitions.ToString();
 	}
 
-	public PlayerInput(int number)
+	void Init(int number)
 	{
 		string postfix = Postfix(number, Application.platform);
 		moveAxisX = Axis.MoveX.ToString() + postfix;
@@ -237,8 +238,19 @@ public class PlayerInput {
 		fireEmbiggen = Button.Embiggen.ToString() + postfix;
 		fireDebigulate = Button.Debigulate.ToString() + postfix;
 
-        pressButton = Button.Press.ToString() + postfix;
-        jumpButton = Button.Jump.ToString() + postfix;
+		pressButton = Button.Press.ToString() + postfix;
+		jumpButton = Button.Jump.ToString() + postfix;
+	}
+
+	public PlayerInput(int number)
+	{
+		Init (number);
+	}
+
+	public PlayerInput(int number, bool oneStickMode)
+	{
+		Init (number);
+		useOneStickMode = oneStickMode;
 	}
 
 	private float GetAxis(string axis) {
@@ -254,15 +266,25 @@ public class PlayerInput {
 	public bool IsGunToHead { get { return(!HasAimX && !HasAimY); } }
 	public Vector2 Aim(bool snap)
 	{
-		Vector2 precise = new Vector2(AimX, AimY);
-		if(!snap)
-		{
-			return precise;
+		if (useOneStickMode) {
+			Vector2 precise = new Vector2 (MoveX, MoveY);
+			if (!snap) {
+				return precise;
+			}
+			return new Vector2 (
+				HasAim (precise.x) ? Mathf.Sign (precise.x) : 0,
+				HasAim (precise.y) ? Mathf.Sign (precise.y) : 0
+			);
+		} else {
+			Vector2 precise = new Vector2 (AimX, AimY);
+			if (!snap) {
+				return precise;
+			}
+			return new Vector2 (
+				HasAim (precise.x) ? Mathf.Sign (precise.x) : 0,
+				HasAim (precise.y) ? Mathf.Sign (precise.y) : 0
+			);
 		}
-		return new Vector2(
-			HasAim(precise.x) ? Mathf.Sign(precise.x) : 0,
-			HasAim(precise.y) ? Mathf.Sign(precise.y) : 0
-		);
 	}
 
 	public float MoveX { get { return GetAxis(moveAxisX); } }
@@ -278,7 +300,11 @@ public class PlayerInput {
 	public bool Jump {
         get
         {
-            return AnalogToDigital(MoveY, jumpThreshold, ref jumpActive) || Input.GetButtonDown(jumpButton);
+			if (useOneStickMode) {
+				return (Input.GetButtonDown (jumpButton));
+			} else {
+				return (AnalogToDigital(MoveY, jumpThreshold, ref jumpActive) || Input.GetButtonDown(jumpButton));
+			}
         }
     }
 
